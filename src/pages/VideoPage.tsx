@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { API, graphqlOperation } from "aws-amplify";
 import { listVideos } from "../graphql/queries";
+import '../styles/page/video-page.css'
+import { title } from "process";
 
 interface VideoData {
   data: {
@@ -11,11 +13,12 @@ interface VideoData {
   };
 }
 
-export default function VideoPage() {
+export default function VideoPage(
+) {
   // TODO: uncomment in second stage
   // const { id } = useParams();
 
-  const [video, setVideo] = useState([]);
+  const [video, setVideo] = useState();
 
   useEffect(() => {
     fetchVideos();
@@ -31,5 +34,22 @@ export default function VideoPage() {
     }
   }
 
-  return <React.Fragment />;
+  if (!video){
+    return <React.Fragment/>
+  }
+  console.log(video)
+  return (
+    <section className="box-video">
+        <iframe className="video" src={video.url} allow="autoplay; fullscreen"></iframe>
+        <div className="box-text">
+  <h1 className="title">{video.title}</h1>
+            {video.pdf&&<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, ea, architecto eveniet velit corporis voluptatibus officia repellendus dignissimos delectus quia dolor dicta esse maiores qui nihil atque, fugiat doloremque magni. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, ea, architecto eveniet velit corporis.
+            </p>}
+        </div>
+        <div className="botones">
+            {video.pdf&&<a className="boton boton-amarillo" href={video.pdf}>PDF</a>}
+        </div>
+    </section> 
+  );
 }
+
