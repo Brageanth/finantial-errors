@@ -15,7 +15,9 @@ export default function VideoPage() {
   // TODO: uncomment in second stage
   // const { id } = useParams();
 
-  const [video, setVideo] = useState([]);
+  const [video, setVideo] = useState();
+
+  useEffect(() => {});
 
   useEffect(() => {
     fetchVideos();
