@@ -1,0 +1,6 @@
+type Video @model {
+  title: String!
+  url: String!
+  pdf: String
+  date: String!
+}
