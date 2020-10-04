@@ -1,36 +1,41 @@
 body {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .box-video {
-    padding: 2rem 20rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  padding: 2rem 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .video {
-    width: 100%;
+  width: 100%;
 }
 
 .box-text {
-    text-align: center;
+  text-align: center;
 }
 
 .botones {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 15rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15rem;
 }
 
 .boton {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 1rem 2rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 1rem 2rem;
 }
 
 .boton-amarillo {
-    background: #E08709;
-    border-radius: 0.5rem;
+  background: #e08709;
+  border-radius: 0.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
 }
