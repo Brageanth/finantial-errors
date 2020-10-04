@@ -26,5 +26,9 @@ yarn-error.log*
 build/
 dist/
 node_modules/
+<<<<<<< HEAD
 aws-exports.js
 ../../../../home/brageanth/Documentos/Ilya/finantial-errors/amplify/mock-data
+=======
+aws-exports.js
+>>>>>>> fa95c8b683c441866c1951ff4efdcdbb9c13d421
