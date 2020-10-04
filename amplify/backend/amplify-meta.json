@@ -1,0 +1,42 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-finantialerrors-dev-181249-authRole",
+      "UnauthRoleArn": "arn:aws:iam::382513735061:role/amplify-finantialerrors-dev-181249-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::382513735061:role/amplify-finantialerrors-dev-181249-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-finantialerrors-dev-181249-deployment",
+      "UnauthRoleName": "amplify-finantialerrors-dev-181249-unauthRole",
+      "StackName": "amplify-finantialerrors-dev-181249",
+      "StackId": "arn:aws:cloudformation:us-east-1:382513735061:stack/amplify-finantialerrors-dev-181249/cb0c6f90-0504-11eb-afea-1271b8f35690",
+      "AmplifyAppId": "d3i0wpycfyvwcp"
+    }
+  },
+  "api": {
+    "finantialerrors": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": "finantialerrors"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "7d3aekuqyfcl7lpwwrbe2ktjb4",
+        "GraphQLAPIEndpointOutput": "https://euzialof3bdsddg4gxditvweju.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-v5wktgswfzgl7ccgjoh4oc25ni"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-finantialerrors-dev-181249-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apifinantialerrors"
+      },
+      "lastPushTimeStamp": "2020-10-02T23:50:14.347Z",
+      "lastPushDirHash": "VQsfU0ckUISi0GOubqiWPV/Swmo="
+    }
+  }
+}
