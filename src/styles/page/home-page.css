@@ -12,6 +12,8 @@
     box-sizing: border-box;
     color: #000000;
     font-family: aileron-black;
+    text-align: center;
+    margin: 0;
   }
 
   
@@ -26,13 +28,14 @@
     margin: auto;
     width: 80vw;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+    font-size: 20px;
 }
 
-.h1-span span {
-    color: white;
-    font-weight: bold;
+.header-text h1
+{
+ text-align: left;
 }
 
 .header-text h2 {
@@ -41,11 +44,6 @@
     color: white;
 }
 
-.header-text h1 {
-    font-size: 4rem;
-    color: white;
-    
-}
 
 /* Componente Main Video */
 
@@ -54,19 +52,10 @@
     background: #D8D8D8;
     padding: 90px;
 }
-/* Componente Header */
-
-.video {
-    text-align: center;
-}
-
-.video iframe {
-    width: 800px;
-}
 
 /* Componente Banner */
 
-.container
+.container1
 {
     display: flex;
     justify-content: space-between;
@@ -78,7 +67,7 @@
 .itemImag
 {
     align-items: center;
-    width: 30%;
+    width: 40%;
 }
 
 /* Componente Comentarios */
@@ -176,6 +165,10 @@
     color: white;
     background: #242323;
     margin: auto;
+}
+.pie p
+{
+    color: white;
 }
 .linkLegal
 {

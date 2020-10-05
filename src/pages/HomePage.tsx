@@ -34,16 +34,17 @@ export default function HomePage() {
     <header className="header">
         <div className="header-text">
             <h2>04</h2>
-            <h1 className="h1-span"><b>errores financieros fatales</b> que podriamos estar cometiendo con nuestros hijos</h1>
+            <h1><b>errores financieros</b> fatales que podriamos 
+                estar cometiendo con nuestros hijos</h1>
         </div>
     </header>
-    <main className="parteVideo">
-        <div>
-            <p>Dale clic al video para ver la clase #1</p>
+    <main>
+        <div className="parteVideo">
+            <div>
+                <p>Dale clic al video para ver la clase #1</p>
+            </div>
+            <iframe src="https://player.vimeo.com/video/107463665?title=0&byline=0&portrait=0"></iframe>
         </div>
-
-        <iframe src="https://player.vimeo.com/video/107463665?title=0&byline=0&portrait=0"></iframe>
-
     </main>
     <section className="box-download">
         <div className="btn-download">
@@ -56,7 +57,7 @@ export default function HomePage() {
         <img src="../img/Workbook-Clase1 (2).png" alt="WorkBook"/>
     </section>
     <section>
-        <div className="container">
+        <div className="container1">
             <div className="item">
                 <h3>Clase #2</h3>
                 <a href="#">
@@ -81,29 +82,6 @@ export default function HomePage() {
         </div>
     </section>
     
-    {/* <section className="box-banner">
-        <div>
-            <h3>Clase #2</h3>
-            <a href="#">
-                <img src="../img/Flyer Los niños y el dinero (6).png" alt=""/>
-            </a>
-            <h3>Miercoles 07</h3>
-        </div>
-        <div>
-            <h3>Clase #3</h3>
-            <a href="#">
-                <img src="../img/Flyer Los niños y el dinero (7).png" alt=""/>
-            </a>
-            <h3>Viernes 02</h3>
-        </div>
-        <div>
-            <h3>Clase #4</h3>
-            <a href="#">
-                <img src="../img/Flyer Los niños y el dinero (8).png" alt=""/>
-            </a>
-            <h3>Lunes 12</h3>
-        </div>
-    </section> */}
     <section className="commit-box">
         <div className="redes">
             <div className="link-instgram">
@@ -124,7 +102,7 @@ export default function HomePage() {
     </section>
     <footer>
         <div className="pie">
-            <p>&copy 2020 Los niños y el dinero Todos los derechos reservados</p>
+            <p>© 2020 Los niños y el dinero · Todos los derechos reservados</p>
             <a className = "linkLegal" href="https://ilya.digital/aviso-legal-y-terminos-de-uso/">
                 Aviso Legal y Términos de Uso</a> 
         </div>
