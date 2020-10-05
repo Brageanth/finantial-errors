@@ -1,6 +1,15 @@
+type Comment @model {
+  comment: String!
+  video: Video!
+  id: ID!
+}
+
 type Video @model {
   title: String!
   url: String!
   pdf: String
   date: String!
+  thumbnail: String!
+  id: ID!
+  comments: [Comment]
 }

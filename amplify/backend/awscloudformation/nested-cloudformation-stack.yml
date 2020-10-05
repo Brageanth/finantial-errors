@@ -78,7 +78,18 @@
 					"DynamoDBBillingMode": "PAY_PER_REQUEST",
 					"DynamoDBEnableServerSideEncryption": false,
 					"S3DeploymentBucket": "amplify-finantialerrors-dev-181249-deployment",
-					"S3DeploymentRootKey": "amplify-appsync-files/f42216b7c063822803843ca4b846a706b8dcfd4e",
+					"S3DeploymentRootKey": "amplify-appsync-files/16f0ef7423597a476e9bc73fc32dfa0010de1fd9",
+					"env": "dev"
+				}
+			}
+		},
+		"hostingamplifyhosting": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplify-finantialerrors-dev-181249-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+				"Parameters": {
+					"appId": "d3i0wpycfyvwcp",
+					"type": "manual",
 					"env": "dev"
 				}
 			}

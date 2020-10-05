@@ -1,15 +1,23 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-finantialerrors-dev-181249-authRole",
-      "UnauthRoleArn": "arn:aws:iam::382513735061:role/amplify-finantialerrors-dev-181249-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::382513735061:role/amplify-finantialerrors-dev-181249-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-finantialerrors-dev-181249-deployment",
-      "UnauthRoleName": "amplify-finantialerrors-dev-181249-unauthRole",
-      "StackName": "amplify-finantialerrors-dev-181249",
-      "StackId": "arn:aws:cloudformation:us-east-1:382513735061:stack/amplify-finantialerrors-dev-181249/cb0c6f90-0504-11eb-afea-1271b8f35690",
-      "AmplifyAppId": "d3i0wpycfyvwcp"
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-finantialerrors-dev-181249-authRole",
+            "UnauthRoleArn": "arn:aws:iam::382513735061:role/amplify-finantialerrors-dev-181249-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::382513735061:role/amplify-finantialerrors-dev-181249-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-finantialerrors-dev-181249-deployment",
+            "UnauthRoleName": "amplify-finantialerrors-dev-181249-unauthRole",
+            "StackName": "amplify-finantialerrors-dev-181249",
+            "StackId": "arn:aws:cloudformation:us-east-1:382513735061:stack/amplify-finantialerrors-dev-181249/cb0c6f90-0504-11eb-afea-1271b8f35690",
+            "AmplifyAppId": "d3i0wpycfyvwcp"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3i0wpycfyvwcp",
+                    "type": "manual"
+                }
+            }
+        }
     }
-  }
 }

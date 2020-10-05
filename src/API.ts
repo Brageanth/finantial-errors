@@ -2,22 +2,16 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateVideoInput = {
+export type CreateCommentInput = {
+  comment: string,
   id?: string | null,
-  title: string,
-  url: string,
-  pdf?: string | null,
-  date: string,
 };
 
-export type ModelVideoConditionInput = {
-  title?: ModelStringInput | null,
-  url?: ModelStringInput | null,
-  pdf?: ModelStringInput | null,
-  date?: ModelStringInput | null,
-  and?: Array< ModelVideoConditionInput | null > | null,
-  or?: Array< ModelVideoConditionInput | null > | null,
-  not?: ModelVideoConditionInput | null,
+export type ModelCommentConditionInput = {
+  comment?: ModelStringInput | null,
+  and?: Array< ModelCommentConditionInput | null > | null,
+  or?: Array< ModelCommentConditionInput | null > | null,
+  not?: ModelCommentConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -60,15 +54,70 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
+export type UpdateCommentInput = {
+  comment?: string | null,
+  id: string,
+};
+
+export type DeleteCommentInput = {
+  id?: string | null,
+};
+
+export type CreateVideoInput = {
+  title: string,
+  url: string,
+  pdf?: string | null,
+  date: string,
+  thumbnail: string,
+  id?: string | null,
+};
+
+export type ModelVideoConditionInput = {
+  title?: ModelStringInput | null,
+  url?: ModelStringInput | null,
+  pdf?: ModelStringInput | null,
+  date?: ModelStringInput | null,
+  thumbnail?: ModelStringInput | null,
+  and?: Array< ModelVideoConditionInput | null > | null,
+  or?: Array< ModelVideoConditionInput | null > | null,
+  not?: ModelVideoConditionInput | null,
+};
+
 export type UpdateVideoInput = {
   title?: string | null,
   url?: string | null,
   pdf?: string | null,
   date?: string | null,
+  thumbnail?: string | null,
+  id: string,
 };
 
 export type DeleteVideoInput = {
   id?: string | null,
+};
+
+export type ModelCommentFilterInput = {
+  comment?: ModelStringInput | null,
+  id?: ModelIDInput | null,
+  and?: Array< ModelCommentFilterInput | null > | null,
+  or?: Array< ModelCommentFilterInput | null > | null,
+  not?: ModelCommentFilterInput | null,
+};
+
+export type ModelIDInput = {
+  ne?: string | null,
+  eq?: string | null,
+  le?: string | null,
+  lt?: string | null,
+  ge?: string | null,
+  gt?: string | null,
+  contains?: string | null,
+  notContains?: string | null,
+  between?: Array< string | null > | null,
+  beginsWith?: string | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+  size?: ModelSizeInput | null,
 };
 
 export type ModelVideoFilterInput = {
@@ -76,9 +125,110 @@ export type ModelVideoFilterInput = {
   url?: ModelStringInput | null,
   pdf?: ModelStringInput | null,
   date?: ModelStringInput | null,
+  thumbnail?: ModelStringInput | null,
+  id?: ModelIDInput | null,
   and?: Array< ModelVideoFilterInput | null > | null,
   or?: Array< ModelVideoFilterInput | null > | null,
   not?: ModelVideoFilterInput | null,
+};
+
+export type CreateCommentMutationVariables = {
+  input: CreateCommentInput,
+  condition?: ModelCommentConditionInput | null,
+};
+
+export type CreateCommentMutation = {
+  createComment:  {
+    __typename: "Comment",
+    comment: string,
+    video:  {
+      __typename: "Video",
+      title: string,
+      url: string,
+      pdf: string | null,
+      date: string,
+      thumbnail: string,
+      id: string,
+      comments:  Array< {
+        __typename: "Comment",
+        comment: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    id: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateCommentMutationVariables = {
+  input: UpdateCommentInput,
+  condition?: ModelCommentConditionInput | null,
+};
+
+export type UpdateCommentMutation = {
+  updateComment:  {
+    __typename: "Comment",
+    comment: string,
+    video:  {
+      __typename: "Video",
+      title: string,
+      url: string,
+      pdf: string | null,
+      date: string,
+      thumbnail: string,
+      id: string,
+      comments:  Array< {
+        __typename: "Comment",
+        comment: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    id: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteCommentMutationVariables = {
+  input: DeleteCommentInput,
+  condition?: ModelCommentConditionInput | null,
+};
+
+export type DeleteCommentMutation = {
+  deleteComment:  {
+    __typename: "Comment",
+    comment: string,
+    video:  {
+      __typename: "Video",
+      title: string,
+      url: string,
+      pdf: string | null,
+      date: string,
+      thumbnail: string,
+      id: string,
+      comments:  Array< {
+        __typename: "Comment",
+        comment: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    id: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
 };
 
 export type CreateVideoMutationVariables = {
@@ -89,11 +239,30 @@ export type CreateVideoMutationVariables = {
 export type CreateVideoMutation = {
   createVideo:  {
     __typename: "Video",
-    id: string,
     title: string,
     url: string,
     pdf: string | null,
     date: string,
+    thumbnail: string,
+    id: string,
+    comments:  Array< {
+      __typename: "Comment",
+      comment: string,
+      video:  {
+        __typename: "Video",
+        title: string,
+        url: string,
+        pdf: string | null,
+        date: string,
+        thumbnail: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -107,11 +276,30 @@ export type UpdateVideoMutationVariables = {
 export type UpdateVideoMutation = {
   updateVideo:  {
     __typename: "Video",
-    id: string,
     title: string,
     url: string,
     pdf: string | null,
     date: string,
+    thumbnail: string,
+    id: string,
+    comments:  Array< {
+      __typename: "Comment",
+      comment: string,
+      video:  {
+        __typename: "Video",
+        title: string,
+        url: string,
+        pdf: string | null,
+        date: string,
+        thumbnail: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -125,13 +313,95 @@ export type DeleteVideoMutationVariables = {
 export type DeleteVideoMutation = {
   deleteVideo:  {
     __typename: "Video",
-    id: string,
     title: string,
     url: string,
     pdf: string | null,
     date: string,
+    thumbnail: string,
+    id: string,
+    comments:  Array< {
+      __typename: "Comment",
+      comment: string,
+      video:  {
+        __typename: "Video",
+        title: string,
+        url: string,
+        pdf: string | null,
+        date: string,
+        thumbnail: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
     createdAt: string,
     updatedAt: string,
+  } | null,
+};
+
+export type GetCommentQueryVariables = {
+  id: string,
+};
+
+export type GetCommentQuery = {
+  getComment:  {
+    __typename: "Comment",
+    comment: string,
+    video:  {
+      __typename: "Video",
+      title: string,
+      url: string,
+      pdf: string | null,
+      date: string,
+      thumbnail: string,
+      id: string,
+      comments:  Array< {
+        __typename: "Comment",
+        comment: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    id: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListCommentsQueryVariables = {
+  filter?: ModelCommentFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListCommentsQuery = {
+  listComments:  {
+    __typename: "ModelCommentConnection",
+    items:  Array< {
+      __typename: "Comment",
+      comment: string,
+      video:  {
+        __typename: "Video",
+        title: string,
+        url: string,
+        pdf: string | null,
+        date: string,
+        thumbnail: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
+    nextToken: string | null,
   } | null,
 };
 
@@ -142,11 +412,30 @@ export type GetVideoQueryVariables = {
 export type GetVideoQuery = {
   getVideo:  {
     __typename: "Video",
-    id: string,
     title: string,
     url: string,
     pdf: string | null,
     date: string,
+    thumbnail: string,
+    id: string,
+    comments:  Array< {
+      __typename: "Comment",
+      comment: string,
+      video:  {
+        __typename: "Video",
+        title: string,
+        url: string,
+        pdf: string | null,
+        date: string,
+        thumbnail: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -163,11 +452,19 @@ export type ListVideosQuery = {
     __typename: "ModelVideoConnection",
     items:  Array< {
       __typename: "Video",
-      id: string,
       title: string,
       url: string,
       pdf: string | null,
       date: string,
+      thumbnail: string,
+      id: string,
+      comments:  Array< {
+        __typename: "Comment",
+        comment: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
       createdAt: string,
       updatedAt: string,
     } | null > | null,
@@ -175,14 +472,117 @@ export type ListVideosQuery = {
   } | null,
 };
 
+export type OnCreateCommentSubscription = {
+  onCreateComment:  {
+    __typename: "Comment",
+    comment: string,
+    video:  {
+      __typename: "Video",
+      title: string,
+      url: string,
+      pdf: string | null,
+      date: string,
+      thumbnail: string,
+      id: string,
+      comments:  Array< {
+        __typename: "Comment",
+        comment: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    id: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateCommentSubscription = {
+  onUpdateComment:  {
+    __typename: "Comment",
+    comment: string,
+    video:  {
+      __typename: "Video",
+      title: string,
+      url: string,
+      pdf: string | null,
+      date: string,
+      thumbnail: string,
+      id: string,
+      comments:  Array< {
+        __typename: "Comment",
+        comment: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    id: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteCommentSubscription = {
+  onDeleteComment:  {
+    __typename: "Comment",
+    comment: string,
+    video:  {
+      __typename: "Video",
+      title: string,
+      url: string,
+      pdf: string | null,
+      date: string,
+      thumbnail: string,
+      id: string,
+      comments:  Array< {
+        __typename: "Comment",
+        comment: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    id: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
 export type OnCreateVideoSubscription = {
   onCreateVideo:  {
     __typename: "Video",
-    id: string,
     title: string,
     url: string,
     pdf: string | null,
     date: string,
+    thumbnail: string,
+    id: string,
+    comments:  Array< {
+      __typename: "Comment",
+      comment: string,
+      video:  {
+        __typename: "Video",
+        title: string,
+        url: string,
+        pdf: string | null,
+        date: string,
+        thumbnail: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -191,11 +591,30 @@ export type OnCreateVideoSubscription = {
 export type OnUpdateVideoSubscription = {
   onUpdateVideo:  {
     __typename: "Video",
-    id: string,
     title: string,
     url: string,
     pdf: string | null,
     date: string,
+    thumbnail: string,
+    id: string,
+    comments:  Array< {
+      __typename: "Comment",
+      comment: string,
+      video:  {
+        __typename: "Video",
+        title: string,
+        url: string,
+        pdf: string | null,
+        date: string,
+        thumbnail: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -204,11 +623,30 @@ export type OnUpdateVideoSubscription = {
 export type OnDeleteVideoSubscription = {
   onDeleteVideo:  {
     __typename: "Video",
-    id: string,
     title: string,
     url: string,
     pdf: string | null,
     date: string,
+    thumbnail: string,
+    id: string,
+    comments:  Array< {
+      __typename: "Comment",
+      comment: string,
+      video:  {
+        __typename: "Video",
+        title: string,
+        url: string,
+        pdf: string | null,
+        date: string,
+        thumbnail: string,
+        id: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
