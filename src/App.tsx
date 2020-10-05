@@ -10,9 +10,9 @@ function App() {
       <Switch>
         {
           // <Route path="/" exact component={HomePage} />
-          // <Route path="/:id" component={VideoPage} />
         }
-        <Route path="/" exact component={VideoPage} />
+        <Route path="/" exact component={HomePage} />
+        <Route path="/:id" component={VideoPage} />
       </Switch>
     </BrowserRouter>
   );

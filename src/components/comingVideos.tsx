@@ -2,22 +2,12 @@ import { API, graphqlOperation } from "aws-amplify";
 import React, { useEffect, useState } from "react";
 import { listVideos } from "../graphql/queries";
 import moment from "moment-timezone";
+import VideoModel from "../models/VideoModel";
 
-interface ComingVideoProps {
-  id: string;
-}
-
-export default function ComingVideo({ id }: ComingVideoProps) {
+export default function ComingVideo({ id }: any) {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    console.log(moment.tz.guess());
-    console.log(
-      moment
-        .tz("2020-09-05 09:00", "America/Bogota")
-        .tz(moment.tz.guess())
-        .format("YYYY-MM-DD HH:mm")
-    );
     fetchVideos();
   }, []);
 
@@ -31,10 +21,19 @@ export default function ComingVideo({ id }: ComingVideoProps) {
     }
   }
 
+  const renderVideo = (video: VideoModel) => {
+    return moment
+      .tz(video.date, "America/Bogota")
+      .tz(moment.tz.guess())
+      .format("YYYY-MM-DD HH:mm");
+  };
+
   return (
     <section>
       <h1>Proximamente</h1>
-      {videos.filter((video: ) => video.id !== id)}
+      {videos
+        .filter((video: VideoModel) => video.id !== id)
+        .map((video: VideoModel) => renderVideo(video))}
     </section>
   );
 }

@@ -5,6 +5,8 @@ import { listVideos } from "../graphql/queries";
 import "../styles/page/video-page.css";
 import { title } from "process";
 import ComingVideo from "../components/comingVideos";
+import moment from "moment-timezone";
+import CountdownPage from "./CountdownPage";
 
 interface VideoData {
   data: {
@@ -19,6 +21,7 @@ export default function VideoPage() {
   // const { id } = useParams();
 
   const [video, setVideo] = useState();
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     fetchVideos();
@@ -28,6 +31,7 @@ export default function VideoPage() {
     try {
       const videoData: any = await API.graphql(graphqlOperation(listVideos));
       const videos = videoData.data.listVideos.items;
+      console.log(videoData);
       setVideo(videos.pop());
     } catch (err) {
       console.log("error fetching todos");
@@ -37,7 +41,11 @@ export default function VideoPage() {
   if (!video) {
     return <React.Fragment />;
   }
-  console.log(video);
+
+  if (moment(video?.date).isAfter(moment()) && !ready) {
+    return <CountdownPage date={video?.date} ready={() => setReady(true)} />;
+  }
+
   return (
     <div className="container">
       <section className="box-video">
@@ -68,7 +76,7 @@ export default function VideoPage() {
           )}
         </div>
       </section>
-      <ComingVideo video={video.id} />
+      <ComingVideo video={video?.id} />
     </div>
   );
 }

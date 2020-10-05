@@ -14,6 +14,7 @@ export default function HomePage() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
+    window.location.href = "http://ilya.digital/registro-comunidadilya/";
     fetchVideos();
   }, []);
 

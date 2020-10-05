@@ -1,3 +1,5 @@
+import CommentModel from "./CommentModel";
+
 export default interface VideoModel {
   title: string;
   url: string;
@@ -5,5 +7,5 @@ export default interface VideoModel {
   date: string;
   thumbnail: string;
   id: string;
-  comments: [Comment];
+  comments: Array<CommentModel>;
 }
