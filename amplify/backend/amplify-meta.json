@@ -35,7 +35,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-finantialerrors-dev-181249-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apifinantialerrors"
       },
-      "lastPushTimeStamp": "2020-10-05T09:12:14.424Z",
+      "lastPushTimeStamp": "2020-10-05T11:33:02.027Z",
       "lastPushDirHash": "X8fLr6WfEKtNX9PaljDLSU/oNPk="
     }
   },
@@ -48,7 +48,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-finantialerrors-dev-181249-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
         "logicalId": "hostingamplifyhosting"
       },
-      "lastPushTimeStamp": "2020-10-05T09:12:12.937Z",
+      "lastPushTimeStamp": "2020-10-05T11:33:02.032Z",
       "output": {},
       "lastPushDirHash": "/+VZ33seFFqAr6wbtptwbINUfSA="
     }

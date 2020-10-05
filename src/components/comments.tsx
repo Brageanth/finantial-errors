@@ -1,4 +1,5 @@
 import { API, graphqlOperation } from "aws-amplify";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { createComment, updateVideo } from "../graphql/mutations";
 import { listComments } from "../graphql/queries";
@@ -52,6 +53,7 @@ export default function Comments({ video }: any) {
       );
       const finalComments: any[] = [];
       setComments(finalComments.concat(comments, commentData));
+      setComment("");
     } catch (err) {
       console.log("error add comment", err);
     }
@@ -59,11 +61,37 @@ export default function Comments({ video }: any) {
 
   return (
     <>
-      <input onChange={(event) => setComment(event.target.value)} />
-      <button onClick={() => sendComment()}>enviar</button>
-      {comments.map((comment: CommentModel) => (
-        <h3>{comment.comment}</h3>
-      ))}
+      <div className="commits">
+        <h2>
+          Queremos saber que te parecio esta clase Dejanos tus comentarios
+        </h2>
+        <div>
+          <textarea
+            name="commit"
+            id=""
+            value={comment}
+            cols={50}
+            rows={2}
+            placeholder={"Escribe tu comentario..."}
+            onChange={(event) => setComment(event.target.value)}
+          ></textarea>
+          <button className="buttonTextarea" onClick={() => sendComment()}>
+            Enviar
+          </button>
+        </div>
+      </div>
+      {comments
+        .slice(0)
+        .reverse()
+        .map((comment: CommentModel) => (
+          <div className="commits">
+            <div
+              style={{ width: "52%", background: "#d7dbdd", margin: "0.5% 0" }}
+            >
+              {comment.comment}
+            </div>
+          </div>
+        ))}
     </>
   );
 }

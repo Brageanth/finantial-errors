@@ -4,6 +4,7 @@ import { listVideos } from "../graphql/queries";
 import moment from "moment-timezone";
 import VideoModel from "../models/VideoModel";
 import "moment/locale/es";
+import slugify from "slugify";
 
 export default function ComingVideo({ id }: any) {
   const [videos, setVideos] = useState([]);
@@ -31,11 +32,22 @@ export default function ComingVideo({ id }: any) {
   };
 
   return (
-    <section>
-      <h1>Proximamente</h1>
+    <section className="box-banner">
       {videos
         .filter((video: VideoModel) => video.id !== id)
-        .map((video: VideoModel) => renderVideo(video))}
+        .slice(0)
+        .sort((a: any, b: any) =>
+          moment(a.date).isBefore(moment(b.date)) ? -1 : 1
+        )
+        .map((video: VideoModel) => (
+          <div className="banner">
+            <h3>{video.title}</h3>
+            <a className="dia" href={`/${slugify(video.title)}`}>
+              <img src={video.thumbnail} alt="" className="itemImag" />
+            </a>
+            <h3>{renderVideo(video)}</h3>
+          </div>
+        ))}
     </section>
   );
 }

@@ -15,7 +15,7 @@ export default function HomePage() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    // window.location.href = "http://ilya.digital/registro-comunidadilya/";
+    window.location.href = "http://ilya.digital/registro-comunidadilya/";
     fetchVideos();
   }, []);
 
@@ -35,8 +35,8 @@ export default function HomePage() {
         <div className="header-text">
           <h2>04</h2>
           <h1 className="h1-span">
-            <span>errores financieros fatales</span> que podriamos estar
-            cometiendo con nuestros hijos
+            errores financieros fatales que podriamos estar cometiendo con
+            nuestros hijos
           </h1>
         </div>
       </header>
@@ -51,8 +51,9 @@ export default function HomePage() {
           <h3>Descarga tu workbook de la clase #1 aqui</h3>
           <a className="btn" href="#">
             <img
-              src="../img/cloud-download-alt-solid.svg"
+              src="https://lh3.googleusercontent.com/proxy/BzNuMX1RAf77qbUXeJ_6JxNiFPy7EVNTlmeJw2eWmuwUU8K3gN8EQXvvzrWUOmifMUaDYnuQphDRSAESYErIM3d_cIXirp-zHsh1YEn9APX3IDcye5LP_9Xjgeq_egVs"
               alt="Botton-Donwload"
+              style={{ fill: "white" }}
             />
             <h1>Descargar</h1>
           </a>
@@ -110,13 +111,19 @@ export default function HomePage() {
             Queremos saber que te parecio esta clase Dejanos tus comentarios
           </h2>
           <div>
-            <textarea name="commit" id="" cols={40} rows={8}></textarea>
+            <textarea
+              name="commit"
+              id=""
+              cols={75}
+              rows={2}
+              placeholder={"Escribe tu comentario..."}
+            ></textarea>
           </div>
         </div>
       </section>
       <footer>
         <div className="pie">
-          <p>&copy 2020 Los niños y el dinero Todos los derechos reservados</p>
+          <p>©2020 Los niños y el dinero Todos los derechos reservados</p>
           <a
             className="linkLegal"
             href="https://ilya.digital/aviso-legal-y-terminos-de-uso/"

@@ -6,6 +6,7 @@ import ComingVideo from "../components/comingVideos";
 import moment from "moment-timezone";
 import CountdownPage from "./CountdownPage";
 import Comments from "./../components/comments";
+import "../styles/page/home-page.css";
 
 interface VideoData {
   data: {
@@ -20,6 +21,7 @@ export default function VideoPage() {
   // const { id } = useParams();
 
   const [video, setVideo] = useState();
+  const [videos, setVideos] = useState();
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -28,10 +30,11 @@ export default function VideoPage() {
 
   async function fetchVideos() {
     try {
-      console.log("falla");
       const videoData: any = await API.graphql(graphqlOperation(listVideos));
       const videos = videoData.data.listVideos.items;
-      setVideo(videos.pop());
+      setVideos(videos);
+      const videoId = window.location.pathname.split("/")[1].replace("-", " #");
+      setVideo(videos.find((pVideo: any) => pVideo.title === videoId));
     } catch (err) {
       console.log("error fetching todos", err);
     }
@@ -46,37 +49,61 @@ export default function VideoPage() {
   }
 
   return (
-    <div className="container">
-      <section className="box-video">
-        <iframe
-          className="video"
-          src={video.url}
-          allow="autoplay; fullscreen"
-        ></iframe>
-        <div className="box-text">
-          <h1 className="title">{video.title}</h1>
-          {video.pdf && (
-            <p>
-              {" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
-              ea, architecto eveniet velit corporis voluptatibus officia
-              repellendus dignissimos delectus quia dolor dicta esse maiores qui
-              nihil atque, fugiat doloremque magni. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Vitae, ea, architecto eveniet velit
-              corporis.
-            </p>
-          )}
+    <div>
+      <header className="header">
+        <div className="header-text">
+          <h2>04</h2>
+          <h1 className="h1-span">
+            errores financieros fatales que podriamos estar cometiendo con
+            nuestros hijos
+          </h1>
         </div>
-        <div className="botones">
-          {video.pdf && (
-            <a className="boton boton-amarillo" href={video.pdf}>
-              PDF
-            </a>
-          )}
+      </header>
+      <main className="main-video">
+        <div className="video">
+          <h2>Dale clic al video para ver la {video.title}</h2>
+          <iframe src={video.url}></iframe>
         </div>
+      </main>
+      <section className="box-download">
+        <div className="btn-download">
+          <h3>Descarga tu workbook de la {video.title} aqui</h3>
+          <a className="btn" target="_blank" href={video.pdf}>
+            <img
+              src="https://lh3.googleusercontent.com/proxy/BzNuMX1RAf77qbUXeJ_6JxNiFPy7EVNTlmeJw2eWmuwUU8K3gN8EQXvvzrWUOmifMUaDYnuQphDRSAESYErIM3d_cIXirp-zHsh1YEn9APX3IDcye5LP_9Xjgeq_egVs"
+              alt="Botton-Donwload"
+              style={{ fill: "white" }}
+            />
+            <h1>Descargar</h1>
+          </a>
+        </div>
+        <img src="../img/Workbook-Clase1 (2).png" alt="WorkBook" />
       </section>
-      <ComingVideo video={video?.id} />
-      <Comments video={video} />
+      <ComingVideo id={video?.id} />
+      <section className="commit-box">
+        <div className="redes">
+          <div className="link-instgram">
+            <img src="../img/instagram.png" alt="Icon-Instagram" />
+            <a href="#">@YennyCastanedaOficial</a>
+          </div>
+          <div className="link-instgram">
+            <img src="../img/instagram.png" alt="Icon-Instagram" />
+            <a href="#">@RamiroReyesOficial</a>
+          </div>
+        </div>
+        <Comments video={video} />
+      </section>
+      <footer>
+        <div className="pie">
+          <p>©2020 Los niños y el dinero Todos los derechos reservados</p>
+          <a
+            className="linkLegal"
+            href="https://ilya.digital/aviso-legal-y-terminos-de-uso/"
+          >
+            Aviso Legal y Términos de Uso
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
