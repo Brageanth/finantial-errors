@@ -1,6 +1,5 @@
 type Comment @model {
   comment: String!
-  video: Video!
   id: ID!
 }
 
@@ -11,5 +10,5 @@ type Video @model {
   date: String!
   thumbnail: String!
   id: ID!
-  comments: [Comment]
+  comments: [String]
 }

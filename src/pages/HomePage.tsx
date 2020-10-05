@@ -60,25 +60,24 @@ export default function HomePage() {
         <div className="container1">
             <div className="item">
                 <h3>Clase #2</h3>
-                <a href="#">
+                <a className="dia" href="#">
                     <img src="../img/Flyer Los niños y el dinero (6).png" alt="" className="itemImag"/>
                 </a>
                 <h3>Miercoles 07</h3>
-            </div>
-            <div className="item">
+        </div>
+        <div className="banner">
                 <h3>Clase #3</h3>
-                <a href="#">
+                <a className="dia" href="#">
                     <img src="../img/Flyer Los niños y el dinero (7).png" alt="" className="itemImag"/>
                 </a>
                 <h3>Viernes 02</h3>
-            </div>
-            <div className="item">
+        </div>
+        <div className="banner">
                 <h3>Clase #4</h3>
-                <a href="#">
+                <a className="dia" href="#">
                     <img src="../img/Flyer Los niños y el dinero (8).png" alt="" className="itemImag"/>
                 </a>
                 <h3>Lunes 12</h3>
-            </div>
         </div>
     </section>
     
