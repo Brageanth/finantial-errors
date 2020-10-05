@@ -3,14 +3,19 @@ import React, { useEffect, useState } from "react";
 import { listVideos } from "../graphql/queries";
 import moment from "moment-timezone";
 
-export default function ComingVideo() {
+interface ComingVideoProps {
+  id: string;
+}
+
+export default function ComingVideo({ id }: ComingVideoProps) {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
+    console.log(moment.tz.guess());
     console.log(
       moment
         .tz("2020-09-05 09:00", "America/Bogota")
-        .tz("America/Toronto")
+        .tz(moment.tz.guess())
         .format("YYYY-MM-DD HH:mm")
     );
     fetchVideos();
@@ -29,6 +34,7 @@ export default function ComingVideo() {
   return (
     <section>
       <h1>Proximamente</h1>
+      {videos.filter((video: ) => video.id !== id)}
     </section>
   );
 }

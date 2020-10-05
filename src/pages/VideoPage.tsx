@@ -68,7 +68,7 @@ export default function VideoPage() {
           )}
         </div>
       </section>
-      <ComingVideo />
+      <ComingVideo video={video.id} />
     </div>
   );
 }
