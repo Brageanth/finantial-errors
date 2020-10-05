@@ -35,8 +35,8 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-finantialerrors-dev-181249-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apifinantialerrors"
       },
-      "lastPushTimeStamp": "2020-10-02T23:50:14.347Z",
-      "lastPushDirHash": "VQsfU0ckUISi0GOubqiWPV/Swmo="
+      "lastPushTimeStamp": "2020-10-04T22:41:42.227Z",
+      "lastPushDirHash": "jg0mHbrbTVgktqcEBblPNGZpClo="
     }
   }
 }

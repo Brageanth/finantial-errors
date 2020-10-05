@@ -2,17 +2,121 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createComment = /* GraphQL */ `
+  mutation CreateComment(
+    $input: CreateCommentInput!
+    $condition: ModelCommentConditionInput
+  ) {
+    createComment(input: $input, condition: $condition) {
+      comment
+      video {
+        title
+        url
+        pdf
+        date
+        thumbnail
+        id
+        comments {
+          comment
+          id
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateComment = /* GraphQL */ `
+  mutation UpdateComment(
+    $input: UpdateCommentInput!
+    $condition: ModelCommentConditionInput
+  ) {
+    updateComment(input: $input, condition: $condition) {
+      comment
+      video {
+        title
+        url
+        pdf
+        date
+        thumbnail
+        id
+        comments {
+          comment
+          id
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteComment = /* GraphQL */ `
+  mutation DeleteComment(
+    $input: DeleteCommentInput!
+    $condition: ModelCommentConditionInput
+  ) {
+    deleteComment(input: $input, condition: $condition) {
+      comment
+      video {
+        title
+        url
+        pdf
+        date
+        thumbnail
+        id
+        comments {
+          comment
+          id
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createVideo = /* GraphQL */ `
   mutation CreateVideo(
     $input: CreateVideoInput!
     $condition: ModelVideoConditionInput
   ) {
     createVideo(input: $input, condition: $condition) {
-      id
       title
       url
       pdf
       date
+      thumbnail
+      id
+      comments {
+        comment
+        video {
+          title
+          url
+          pdf
+          date
+          thumbnail
+          id
+          createdAt
+          updatedAt
+        }
+        id
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -24,11 +128,28 @@ export const updateVideo = /* GraphQL */ `
     $condition: ModelVideoConditionInput
   ) {
     updateVideo(input: $input, condition: $condition) {
-      id
       title
       url
       pdf
       date
+      thumbnail
+      id
+      comments {
+        comment
+        video {
+          title
+          url
+          pdf
+          date
+          thumbnail
+          id
+          createdAt
+          updatedAt
+        }
+        id
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -40,11 +161,28 @@ export const deleteVideo = /* GraphQL */ `
     $condition: ModelVideoConditionInput
   ) {
     deleteVideo(input: $input, condition: $condition) {
-      id
       title
       url
       pdf
       date
+      thumbnail
+      id
+      comments {
+        comment
+        video {
+          title
+          url
+          pdf
+          date
+          thumbnail
+          id
+          createdAt
+          updatedAt
+        }
+        id
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
