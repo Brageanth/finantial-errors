@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { API, graphqlOperation } from "aws-amplify";
 import { listVideos } from "../graphql/queries";
 import "../styles/page/video-page.css";
-import { title } from "process";
 import ComingVideo from "../components/comingVideos";
 import moment from "moment-timezone";
 import CountdownPage from "./CountdownPage";
+import Comments from "./../components/comments";
 
 interface VideoData {
   data: {
@@ -29,12 +28,12 @@ export default function VideoPage() {
 
   async function fetchVideos() {
     try {
+      console.log("falla");
       const videoData: any = await API.graphql(graphqlOperation(listVideos));
       const videos = videoData.data.listVideos.items;
-      console.log(videoData);
       setVideo(videos.pop());
     } catch (err) {
-      console.log("error fetching todos");
+      console.log("error fetching todos", err);
     }
   }
 
@@ -77,6 +76,7 @@ export default function VideoPage() {
         </div>
       </section>
       <ComingVideo video={video?.id} />
+      <Comments video={video} />
     </div>
   );
 }
