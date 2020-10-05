@@ -1,0 +1,203 @@
+@font-face {
+    font-family: aileron-black;
+    src: url("./../../assets/fonts/Aileron-Black.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: alexis-marie;
+    src: url("./../../assets/fonts/Alexis\ Marie.ttf");
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000000;
+    font-family: aileron-black;
+  }
+
+  
+
+/* Componente Header */
+
+.header {
+    background: #691F9C;
+    padding: 2rem;
+}
+
+.header-text {
+    margin: auto;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text h1 {
+    font-size: 4rem;
+    color: white;
+}
+
+.header-text h2 {
+    font-size: 8em;
+    line-height: 0;
+    color: white;
+}
+.h1-span span {
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Componente Main Video */
+
+.main-video {
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    background: #D8D8D8;}
+
+.video iframe {
+    border: none;
+    height: 50vh;
+    padding: 0;
+    margin: 0;
+}
+/* Componente Header */
+
+.video {
+    text-align: center;
+}
+
+.video iframe {
+    width: 800px;
+}
+
+/* Componente Banner */
+
+.box-banner {
+    padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #D8D8D8;
+    
+    
+}
+
+.banner {
+    text-align: center;
+}
+
+.dia img {
+    width: 25vw;
+}
+
+/* Componente Comentarios */
+
+.commit-box {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.redes {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.link-instgram {
+    padding-right: 10rem;
+}
+
+.link-instgram img {
+    height: 1rem;
+    
+}
+
+.link-instgram:last-of-type {
+    padding: 0;
+}
+
+.link-instgram a {
+    text-decoration: none;
+}
+
+.commits {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.commits div {
+    border: 1rem solid #D7DBDD;
+    border-radius: 1rem;
+}
+
+.commits textarea {
+    padding: 0.5rem;
+    resize: none;
+    outline: 0 none;
+    border: none;
+}
+
+.commit {
+    padding: 4rem;
+}
+
+/* Componente Descargar */
+
+.box-download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-download {
+    padding-right: 10rem;
+}
+
+.box-download img {
+    height: 20rem;
+}
+
+.btn {
+    width: 20vw;
+    background: #D98880;
+    padding: 1rem 4rem;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    
+
+}
+
+.btn-download a {
+    text-decoration: none;
+}
+
+.btn-download a img {
+    margin: 0;
+    height: 3rem;
+}
+
+/* Componente Footer */
+
+.pie
+{
+    color: white;
+    background: #242323;
+    margin: auto;
+}
+.linkLegal
+{
+    color: white;
+}
