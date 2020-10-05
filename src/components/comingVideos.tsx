@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { listVideos } from "../graphql/queries";
 import moment from "moment-timezone";
 import VideoModel from "../models/VideoModel";
+import "moment/locale/es";
 
 export default function ComingVideo({ id }: any) {
   const [videos, setVideos] = useState([]);
@@ -25,7 +26,8 @@ export default function ComingVideo({ id }: any) {
     return moment
       .tz(video.date, "America/Bogota")
       .tz(moment.tz.guess())
-      .format("YYYY-MM-DD HH:mm");
+      .locale("es")
+      .format("dddd DD");
   };
 
   return (

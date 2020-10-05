@@ -6,22 +6,6 @@ export const onCreateComment = /* GraphQL */ `
   subscription OnCreateComment {
     onCreateComment {
       comment
-      video {
-        title
-        url
-        pdf
-        date
-        thumbnail
-        id
-        comments {
-          comment
-          id
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
       id
       createdAt
       updatedAt
@@ -32,22 +16,6 @@ export const onUpdateComment = /* GraphQL */ `
   subscription OnUpdateComment {
     onUpdateComment {
       comment
-      video {
-        title
-        url
-        pdf
-        date
-        thumbnail
-        id
-        comments {
-          comment
-          id
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
       id
       createdAt
       updatedAt
@@ -58,22 +26,6 @@ export const onDeleteComment = /* GraphQL */ `
   subscription OnDeleteComment {
     onDeleteComment {
       comment
-      video {
-        title
-        url
-        pdf
-        date
-        thumbnail
-        id
-        comments {
-          comment
-          id
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
       id
       createdAt
       updatedAt
@@ -89,22 +41,7 @@ export const onCreateVideo = /* GraphQL */ `
       date
       thumbnail
       id
-      comments {
-        comment
-        video {
-          title
-          url
-          pdf
-          date
-          thumbnail
-          id
-          createdAt
-          updatedAt
-        }
-        id
-        createdAt
-        updatedAt
-      }
+      comments
       createdAt
       updatedAt
     }
@@ -119,22 +56,7 @@ export const onUpdateVideo = /* GraphQL */ `
       date
       thumbnail
       id
-      comments {
-        comment
-        video {
-          title
-          url
-          pdf
-          date
-          thumbnail
-          id
-          createdAt
-          updatedAt
-        }
-        id
-        createdAt
-        updatedAt
-      }
+      comments
       createdAt
       updatedAt
     }
@@ -149,22 +71,7 @@ export const onDeleteVideo = /* GraphQL */ `
       date
       thumbnail
       id
-      comments {
-        comment
-        video {
-          title
-          url
-          pdf
-          date
-          thumbnail
-          id
-          createdAt
-          updatedAt
-        }
-        id
-        createdAt
-        updatedAt
-      }
+      comments
       createdAt
       updatedAt
     }
