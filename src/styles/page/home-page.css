@@ -9,6 +9,8 @@
   }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     color: #000000;
     font-family: aileron-black;
@@ -20,6 +22,7 @@
 
 .header {
     background: #691F9C;
+    padding: 2rem;
 }
 
 .header-text {
@@ -30,9 +33,9 @@
     align-items: center;
 }
 
-.h1-span span {
+.header-text h1 {
+    font-size: 4rem;
     color: white;
-    font-weight: bold;
 }
 
 .header-text h2 {
@@ -40,19 +43,25 @@
     line-height: 0;
     color: white;
 }
-
-.header-text h1 {
-    font-size: 4rem;
+.h1-span span {
     color: white;
-    
+    font-weight: bold;
 }
+
 
 /* Componente Main Video */
 
-.parteVideo
-{
-    background: #D8D8D8;
-    padding: 90px;
+.main-video {
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    background: #D8D8D8;}
+
+.video iframe {
+    border: none;
+    height: 50vh;
+    padding: 0;
+    margin: 0;
 }
 /* Componente Header */
 
@@ -66,29 +75,35 @@
 
 /* Componente Banner */
 
-.container
-{
+.box-banner {
+    padding: 2rem;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background: #D8D8D8;
+    
+    
 }
-.item{
-    align-items: center;
+
+.banner {
+    text-align: center;
 }
-.itemImag
-{
-    align-items: center;
-    width: 30%;
+
+.dia img {
+    width: 25vw;
 }
 
 /* Componente Comentarios */
 
 .commit-box {
+    padding: 2rem;
     display: flex;
     flex-direction: column;
 }
 
 .redes {
+    padding: 2rem;
     display: flex;
     justify-content: center;
 }
@@ -111,6 +126,7 @@
 }
 
 .commits {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,6 +143,10 @@
     resize: none;
     outline: 0 none;
     border: none;
+}
+
+.commit {
+    padding: 4rem;
 }
 
 /* Componente Descargar */

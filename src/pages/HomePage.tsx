@@ -34,16 +34,14 @@ export default function HomePage() {
     <header className="header">
         <div className="header-text">
             <h2>04</h2>
-            <h1 className="h1-span"><b>errores financieros fatales</b> que podriamos estar cometiendo con nuestros hijos</h1>
+            <h1 className="h1-span"><span>errores financieros fatales</span> que podriamos estar cometiendo con nuestros hijos</h1>
         </div>
     </header>
-    <main className="parteVideo">
-        <div>
-            <p>Dale clic al video para ver la clase #1</p>
+    <main className="main-video">
+        <div className="video">
+            <h2>Dale clic al video para ver la clase #1</h2>
+            <iframe src="https://player.vimeo.com/video/107463665?title=0&byline=0&portrait=0"></iframe>
         </div>
-
-        <iframe src="https://player.vimeo.com/video/107463665?title=0&byline=0&portrait=0"></iframe>
-
     </main>
     <section className="box-download">
         <div className="btn-download">
@@ -55,29 +53,27 @@ export default function HomePage() {
         </div>
         <img src="../img/Workbook-Clase1 (2).png" alt="WorkBook"/>
     </section>
-    <section>
-        <div className="container">
-            <div className="item">
+    <section className="box-banner">
+        <div className="banner">
                 <h3>Clase #2</h3>
-                <a href="#">
+                <a className="dia" href="#">
                     <img src="../img/Flyer Los niños y el dinero (6).png" alt="" className="itemImag"/>
                 </a>
                 <h3>Miercoles 07</h3>
-            </div>
-            <div className="item">
+        </div>
+        <div className="banner">
                 <h3>Clase #3</h3>
-                <a href="#">
+                <a className="dia" href="#">
                     <img src="../img/Flyer Los niños y el dinero (7).png" alt="" className="itemImag"/>
                 </a>
                 <h3>Viernes 02</h3>
-            </div>
-            <div className="item">
+        </div>
+        <div className="banner">
                 <h3>Clase #4</h3>
-                <a href="#">
+                <a className="dia" href="#">
                     <img src="../img/Flyer Los niños y el dinero (8).png" alt="" className="itemImag"/>
                 </a>
                 <h3>Lunes 12</h3>
-            </div>
         </div>
     </section>
     
