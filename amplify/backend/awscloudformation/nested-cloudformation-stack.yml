@@ -71,26 +71,26 @@
 		"apifinantialerrors": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-finantialerrors-dev-181249-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-finantialerrors-prod-64725-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"CreateAPIKey": 1,
 					"AppSyncApiName": "finantialerrors",
 					"DynamoDBBillingMode": "PAY_PER_REQUEST",
 					"DynamoDBEnableServerSideEncryption": false,
-					"S3DeploymentBucket": "amplify-finantialerrors-dev-181249-deployment",
-					"S3DeploymentRootKey": "amplify-appsync-files/83ddbd01161f1b6b4c5ce4e6fa575d2b4d0c4625",
-					"env": "dev"
+					"S3DeploymentBucket": "amplify-finantialerrors-prod-64725-deployment",
+					"S3DeploymentRootKey": "amplify-appsync-files/0a49fd36c17bf4bcecade1c0b38b3367d2f52d55",
+					"env": "prod"
 				}
 			}
 		},
 		"hostingamplifyhosting": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-finantialerrors-dev-181249-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-finantialerrors-prod-64725-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
 				"Parameters": {
 					"appId": "d3i0wpycfyvwcp",
 					"type": "manual",
-					"env": "dev"
+					"env": "prod"
 				}
 			}
 		}

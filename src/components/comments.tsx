@@ -8,6 +8,7 @@ import CommentModel from "../models/CommentModel";
 export default function Comments({ video }: any) {
   const [comments, setComments] = useState<any[]>([]);
   const [comment, setComment] = useState("");
+  const [name, setName] = useState("");
 
   useEffect(() => {
     if (comments) {
@@ -32,7 +33,7 @@ export default function Comments({ video }: any) {
           finalState.push(commentFind);
         }
       });
-      setComments(finalState);
+      setComments(commentsState);
     } catch (err) {
       console.log("error fetching comments", err);
     }
@@ -41,11 +42,13 @@ export default function Comments({ video }: any) {
   async function sendComment() {
     try {
       const newComment: any = await API.graphql(
-        graphqlOperation(createComment, { input: { comment } })
+        graphqlOperation(createComment, { input: { comment, name } })
       );
       const commentData = newComment.data.createComment;
       const newComments = video.comments || [];
       newComments.push(commentData.id);
+      console.log(name);
+
       await API.graphql(
         graphqlOperation(updateVideo, {
           input: { id: video.id, comments: newComments },
@@ -65,12 +68,19 @@ export default function Comments({ video }: any) {
         <h2>
           Queremos saber que te parecio esta clase Dejanos tus comentarios
         </h2>
+        <div style={{ margin: "1% 0" }}>
+          <input
+            onChange={(event) => setName(event.target.value)}
+            placeholder={"Nombre"}
+            style={{ width: "100%" }}
+          />
+        </div>
         <div>
           <textarea
             name="commit"
             id=""
             value={comment}
-            cols={50}
+            style={{ width: "100%" }}
             rows={2}
             placeholder={"Escribe tu comentario..."}
             onChange={(event) => setComment(event.target.value)}
@@ -86,8 +96,17 @@ export default function Comments({ video }: any) {
         .map((comment: CommentModel) => (
           <div className="commits">
             <div
-              style={{ width: "52%", background: "#d7dbdd", margin: "0.5% 0" }}
+              style={{
+                background: "#d7dbdd",
+                margin: "0.5% 0",
+                textAlign: "left",
+                fontFamily: "aileron",
+              }}
             >
+              <span style={{ fontFamily: "aileron-black" }}>
+                {comment.name || ""}
+              </span>
+              <br />
               {comment.comment}
             </div>
           </div>

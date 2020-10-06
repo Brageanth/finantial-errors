@@ -6,6 +6,7 @@ export const onCreateComment = /* GraphQL */ `
   subscription OnCreateComment {
     onCreateComment {
       comment
+      name
       id
       createdAt
       updatedAt
@@ -16,6 +17,7 @@ export const onUpdateComment = /* GraphQL */ `
   subscription OnUpdateComment {
     onUpdateComment {
       comment
+      name
       id
       createdAt
       updatedAt
@@ -26,6 +28,7 @@ export const onDeleteComment = /* GraphQL */ `
   subscription OnDeleteComment {
     onDeleteComment {
       comment
+      name
       id
       createdAt
       updatedAt

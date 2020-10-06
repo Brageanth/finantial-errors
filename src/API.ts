@@ -4,11 +4,13 @@
 
 export type CreateCommentInput = {
   comment: string,
+  name?: string | null,
   id?: string | null,
 };
 
 export type ModelCommentConditionInput = {
   comment?: ModelStringInput | null,
+  name?: ModelStringInput | null,
   and?: Array< ModelCommentConditionInput | null > | null,
   or?: Array< ModelCommentConditionInput | null > | null,
   not?: ModelCommentConditionInput | null,
@@ -56,6 +58,7 @@ export type ModelSizeInput = {
 
 export type UpdateCommentInput = {
   comment?: string | null,
+  name?: string | null,
   id: string,
 };
 
@@ -101,6 +104,7 @@ export type DeleteVideoInput = {
 
 export type ModelCommentFilterInput = {
   comment?: ModelStringInput | null,
+  name?: ModelStringInput | null,
   id?: ModelIDInput | null,
   and?: Array< ModelCommentFilterInput | null > | null,
   or?: Array< ModelCommentFilterInput | null > | null,
@@ -145,6 +149,7 @@ export type CreateCommentMutation = {
   createComment:  {
     __typename: "Comment",
     comment: string,
+    name: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -160,6 +165,7 @@ export type UpdateCommentMutation = {
   updateComment:  {
     __typename: "Comment",
     comment: string,
+    name: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -175,6 +181,7 @@ export type DeleteCommentMutation = {
   deleteComment:  {
     __typename: "Comment",
     comment: string,
+    name: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -249,6 +256,7 @@ export type GetCommentQuery = {
   getComment:  {
     __typename: "Comment",
     comment: string,
+    name: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -267,6 +275,7 @@ export type ListCommentsQuery = {
     items:  Array< {
       __typename: "Comment",
       comment: string,
+      name: string | null,
       id: string,
       createdAt: string,
       updatedAt: string,
@@ -323,6 +332,7 @@ export type OnCreateCommentSubscription = {
   onCreateComment:  {
     __typename: "Comment",
     comment: string,
+    name: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -333,6 +343,7 @@ export type OnUpdateCommentSubscription = {
   onUpdateComment:  {
     __typename: "Comment",
     comment: string,
+    name: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -343,6 +354,7 @@ export type OnDeleteCommentSubscription = {
   onDeleteComment:  {
     __typename: "Comment",
     comment: string,
+    name: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,

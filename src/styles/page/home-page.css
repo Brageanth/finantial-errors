@@ -145,6 +145,7 @@
 .commits div {
   border: 1rem solid #d7dbdd;
   border-radius: 1rem;
+  width: 52%;
 }
 
 .commits textarea {
@@ -159,7 +160,17 @@
   font-family: aileron;
 }
 
+.commits input {
+  text-align: left;
+  font-family: aileron;
+}
+
 .commits textarea::placeholder {
+  text-align: left;
+  font-family: aileron;
+}
+
+.commits input::placeholder {
   text-align: left;
   font-family: aileron;
 }
@@ -187,6 +198,7 @@
 .btn-download > h3 {
   font-family: aileron;
   color: #666666;
+  margin: 3% 0%;
   font-size: 22px;
 }
 
@@ -238,4 +250,53 @@
   font-family: aileron-black;
   border: none;
   cursor: pointer;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .header-text {
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .video iframe {
+    height: 200px;
+  }
+
+  .btn-download a img {
+    height: 1rem;
+  }
+
+  .btn-download a h1 {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 37vw;
+  }
+
+  .redes {
+    flex-direction: column;
+  }
+
+  .link-instgram {
+    padding: 0;
+  }
+
+  .commits div {
+    width: 100%;
+  }
+
+  .video h2 {
+    font-size: 22px;
+  }
+
+  .box-download img {
+    height: 10rem;
+    margin: 5% 0;
+  }
+
+  .box-download h3 {
+    font-size: 15px;
+  }
 }

@@ -42,7 +42,10 @@ export default function ComingVideo({ id }: any) {
         .map((video: VideoModel) => (
           <div className="banner">
             <h3>{video.title}</h3>
-            <a className="dia" href={`/${slugify(video.title)}`}>
+            <a
+              className="dia"
+              href={`/clase${video.title.replace(/\D+/g, "")}`}
+            >
               <img src={video.thumbnail} alt="" className="itemImag" />
             </a>
             <h3>{renderVideo(video)}</h3>

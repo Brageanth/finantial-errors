@@ -6,6 +6,7 @@ export const getComment = /* GraphQL */ `
   query GetComment($id: ID!) {
     getComment(id: $id) {
       comment
+      name
       id
       createdAt
       updatedAt
@@ -21,6 +22,7 @@ export const listComments = /* GraphQL */ `
     listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         comment
+        name
         id
         createdAt
         updatedAt

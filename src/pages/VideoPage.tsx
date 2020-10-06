@@ -33,8 +33,12 @@ export default function VideoPage() {
       const videoData: any = await API.graphql(graphqlOperation(listVideos));
       const videos = videoData.data.listVideos.items;
       setVideos(videos);
-      const videoId = window.location.pathname.split("/")[1].replace("-", " #");
-      setVideo(videos.find((pVideo: any) => pVideo.title === videoId));
+      const videoId = window.location.pathname
+        .split("/")[1]
+        .replace(/\D+/g, "");
+      setVideo(
+        videos.find((pVideo: any) => pVideo.title === `Clase #${videoId}`)
+      );
     } catch (err) {
       console.log("error fetching todos", err);
     }
@@ -70,7 +74,7 @@ export default function VideoPage() {
           <h3>Descarga tu workbook de la {video.title} aqui</h3>
           <a className="btn" target="_blank" href={video.pdf}>
             <img
-              src="https://lh3.googleusercontent.com/proxy/BzNuMX1RAf77qbUXeJ_6JxNiFPy7EVNTlmeJw2eWmuwUU8K3gN8EQXvvzrWUOmifMUaDYnuQphDRSAESYErIM3d_cIXirp-zHsh1YEn9APX3IDcye5LP_9Xjgeq_egVs"
+              src="https://lh3.googleusercontent.com/proxy/KFvNQ_ap8Cx4Jn11srQzt72hV41dqS__LuDDPIVHWGCI6Sp66zPhKZQieTSNC0_MdhBsJ_tMJA67OZniWCa_GTa5NBUVZUOvUmfmIwDbdghtPa8GIQN73GSvMvUEkBg8"
               alt="Botton-Donwload"
               style={{ fill: "white" }}
             />
