@@ -7,6 +7,7 @@ export const getComment = /* GraphQL */ `
     getComment(id: $id) {
       comment
       name
+      videoId
       id
       createdAt
       updatedAt
@@ -23,6 +24,7 @@ export const listComments = /* GraphQL */ `
       items {
         comment
         name
+        videoId
         id
         createdAt
         updatedAt

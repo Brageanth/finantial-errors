@@ -5,12 +5,14 @@
 export type CreateCommentInput = {
   comment: string,
   name?: string | null,
+  videoId?: string | null,
   id?: string | null,
 };
 
 export type ModelCommentConditionInput = {
   comment?: ModelStringInput | null,
   name?: ModelStringInput | null,
+  videoId?: ModelStringInput | null,
   and?: Array< ModelCommentConditionInput | null > | null,
   or?: Array< ModelCommentConditionInput | null > | null,
   not?: ModelCommentConditionInput | null,
@@ -59,6 +61,7 @@ export type ModelSizeInput = {
 export type UpdateCommentInput = {
   comment?: string | null,
   name?: string | null,
+  videoId?: string | null,
   id: string,
 };
 
@@ -105,6 +108,7 @@ export type DeleteVideoInput = {
 export type ModelCommentFilterInput = {
   comment?: ModelStringInput | null,
   name?: ModelStringInput | null,
+  videoId?: ModelStringInput | null,
   id?: ModelIDInput | null,
   and?: Array< ModelCommentFilterInput | null > | null,
   or?: Array< ModelCommentFilterInput | null > | null,
@@ -150,6 +154,7 @@ export type CreateCommentMutation = {
     __typename: "Comment",
     comment: string,
     name: string | null,
+    videoId: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -166,6 +171,7 @@ export type UpdateCommentMutation = {
     __typename: "Comment",
     comment: string,
     name: string | null,
+    videoId: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -182,6 +188,7 @@ export type DeleteCommentMutation = {
     __typename: "Comment",
     comment: string,
     name: string | null,
+    videoId: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -257,6 +264,7 @@ export type GetCommentQuery = {
     __typename: "Comment",
     comment: string,
     name: string | null,
+    videoId: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -276,6 +284,7 @@ export type ListCommentsQuery = {
       __typename: "Comment",
       comment: string,
       name: string | null,
+      videoId: string | null,
       id: string,
       createdAt: string,
       updatedAt: string,
@@ -333,6 +342,7 @@ export type OnCreateCommentSubscription = {
     __typename: "Comment",
     comment: string,
     name: string | null,
+    videoId: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -344,6 +354,7 @@ export type OnUpdateCommentSubscription = {
     __typename: "Comment",
     comment: string,
     name: string | null,
+    videoId: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -355,6 +366,7 @@ export type OnDeleteCommentSubscription = {
     __typename: "Comment",
     comment: string,
     name: string | null,
+    videoId: string | null,
     id: string,
     createdAt: string,
     updatedAt: string,

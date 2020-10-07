@@ -7,6 +7,7 @@ export const onCreateComment = /* GraphQL */ `
     onCreateComment {
       comment
       name
+      videoId
       id
       createdAt
       updatedAt
@@ -18,6 +19,7 @@ export const onUpdateComment = /* GraphQL */ `
     onUpdateComment {
       comment
       name
+      videoId
       id
       createdAt
       updatedAt
@@ -29,6 +31,7 @@ export const onDeleteComment = /* GraphQL */ `
     onDeleteComment {
       comment
       name
+      videoId
       id
       createdAt
       updatedAt
