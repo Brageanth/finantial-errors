@@ -1,10 +1,11 @@
 import { API, graphqlOperation } from "aws-amplify";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { createComment, updateVideo } from "../graphql/mutations";
 import { listComments } from "../graphql/queries";
 import CommentModel from "../models/CommentModel";
 
-export default function Comments({ video, videoId }: any) {
+export default function Comments({ video, videoId, postDate }: any) {
   const [comments, setComments] = useState<any[]>([]);
   const [comment, setComment] = useState("");
   const [name, setName] = useState("");
@@ -26,9 +27,10 @@ export default function Comments({ video, videoId }: any) {
 
       setComments(
         commentsState.filter((commentRes: any) =>
-          videoId === "1"
-            ? !commentRes.videoId
-            : commentRes.videoId === video.id
+          postDate
+            ? moment(commentRes.createdAt).isSameOrAfter(moment(video.date)) &&
+              moment(commentRes.createdAt).isBefore(moment(postDate))
+            : moment(commentRes.createdAt).isSameOrAfter(moment(video.date))
         )
       );
     } catch (err) {
@@ -96,10 +98,15 @@ export default function Comments({ video, videoId }: any) {
                 background: "#d7dbdd",
                 margin: "0.5% 0",
                 textAlign: "left",
-                fontFamily: "aileron",
+                fontFamily: "aileron, poppins",
               }}
             >
-              <span style={{ fontFamily: "aileron-black" }}>
+              <span
+                style={{
+                  fontFamily: "aileron-black, poppins",
+                  fontWeight: 700,
+                }}
+              >
                 {comment.name || ""}
               </span>
               <br />

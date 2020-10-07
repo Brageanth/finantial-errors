@@ -87,14 +87,35 @@ export default function VideoPage() {
         <div className="redes">
           <div className="link-instgram">
             <img src="../img/instagram.png" alt="Icon-Instagram" />
-            <a href="#">@YennyCastanedaOficial</a>
+            <a
+              href="https://www.instagram.com/YennyCastanedaOficial"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @YennyCastanedaOficial
+            </a>
           </div>
           <div className="link-instgram">
             <img src="../img/instagram.png" alt="Icon-Instagram" />
-            <a href="#">@RamiroReyesOficial</a>
+            <a
+              href="https://www.instagram.com/RamiroReyesOficial"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @RamiroReyesOficial
+            </a>
           </div>
         </div>
-        <Comments video={video} videoId={videoId} />
+        <Comments
+          video={video}
+          videoId={videoId}
+          postDate={
+            videos?.find(
+              (pVideo: any) =>
+                pVideo.title === `Clase #${parseInt(videoId) + 1}`
+            )?.date
+          }
+        />
       </section>
       <footer>
         <div className="pie">

@@ -19,7 +19,8 @@ export default function CountdownPage({ date, ready }: any) {
     }
   }, [countdown]);
 
-  const finalNumber = (number: Number) => `0${number}`.slice(-2);
+  const finalNumber = (number: Number) =>
+    number.toString().length < 2 ? `0${number}`.slice(-2) : number;
 
   return (
     <div className="containerCountDown">
