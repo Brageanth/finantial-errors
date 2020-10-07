@@ -8,6 +8,8 @@
   src: url("./../../assets/fonts/Alexis\ Marie.ttf");
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+
 .containerCountDown {
   background: white;
   background-size: cover;
@@ -20,7 +22,8 @@
 }
 
 .title {
-  font-family: aileron-black;
+  font-family: aileron-black, poppins;
+  font-weight: 700;
   color: #525252;
   text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
   text-align: center;

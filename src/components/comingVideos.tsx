@@ -1,29 +1,14 @@
-import { API, graphqlOperation } from "aws-amplify";
-import React, { useEffect, useState } from "react";
-import { listVideos } from "../graphql/queries";
+import React from "react";
 import moment from "moment-timezone";
 import VideoModel from "../models/VideoModel";
 import "moment/locale/es";
-import slugify from "slugify";
+const momentTime = require("moment");
 
-export default function ComingVideo({ id }: any) {
-  const [videos, setVideos] = useState([]);
-
-  useEffect(() => {
-    fetchVideos();
-  }, []);
-
-  async function fetchVideos() {
-    try {
-      const videoData: any = await API.graphql(graphqlOperation(listVideos));
-      const videos = videoData.data.listVideos.items;
-      setVideos(videos);
-    } catch (err) {
-      console.log("error fetching videos");
-    }
-  }
-
+export default function ComingVideo({ id, videos }: any) {
   const renderVideo = (video: VideoModel) => {
+    if (momentTime(video.date).isBefore(momentTime())) {
+      return "Ya disponible, míralo aquí";
+    }
     return moment
       .tz(video.date, "America/Bogota")
       .tz(moment.tz.guess())
@@ -40,16 +25,16 @@ export default function ComingVideo({ id }: any) {
           moment(a.date).isBefore(moment(b.date)) ? -1 : 1
         )
         .map((video: VideoModel) => (
-          <div className="banner">
+          <a
+            className="banner"
+            href={`/clase${video.title.replace(/\D+/g, "")}`}
+          >
             <h3>{video.title}</h3>
-            <a
-              className="dia"
-              href={`/clase${video.title.replace(/\D+/g, "")}`}
-            >
+            <div className="dia">
               <img src={video.thumbnail} alt="" className="itemImag" />
-            </a>
+            </div>
             <h3>{renderVideo(video)}</h3>
-          </div>
+          </a>
         ))}
     </section>
   );

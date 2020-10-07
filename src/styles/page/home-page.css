@@ -13,6 +13,8 @@
   src: url("./../../assets/fonts/Alexis\ Marie.ttf");
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +40,7 @@
   justify-content: left;
   align-items: center;
   font-size: 20px;
-  font-family: aileron;
+  font-family: aileron, poppins;
 }
 
 .header-text h1 {
@@ -84,6 +86,7 @@
 
 .banner {
   text-align: center;
+  text-decoration: none;
 }
 
 .banner > h3 {
@@ -126,7 +129,7 @@
 
 .link-instgram a {
   text-decoration: none;
-  font-family: aileron;
+  font-family: aileron, poppins;
   color: #666666;
 }
 
@@ -137,7 +140,7 @@
 }
 
 .commits > h2 {
-  font-family: aileron;
+  font-family: aileron, poppins;
   color: #666666;
   margin-bottom: 2%;
 }
@@ -157,22 +160,22 @@
 
 .commits textarea {
   text-align: left;
-  font-family: aileron;
+  font-family: aileron, poppins;
 }
 
 .commits input {
   text-align: left;
-  font-family: aileron;
+  font-family: aileron, poppins;
 }
 
 .commits textarea::placeholder {
   text-align: left;
-  font-family: aileron;
+  font-family: aileron, poppins;
 }
 
 .commits input::placeholder {
   text-align: left;
-  font-family: aileron;
+  font-family: aileron, poppins;
 }
 
 .commit {
@@ -196,7 +199,7 @@
 }
 
 .btn-download > h3 {
-  font-family: aileron;
+  font-family: aileron, poppins;
   color: #666666;
   margin: 3% 0%;
   font-size: 22px;
@@ -207,9 +210,9 @@
 }
 
 .btn {
-  width: 25vw;
+  width: 20vw;
   background: #825274;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 5rem;
   display: flex;
   justify-content: space-around;
@@ -247,7 +250,8 @@
   padding: 0.5rem 1rem;
   border-radius: 5rem;
   color: white;
-  font-family: aileron-black;
+  font-family: aileron-black, poppins;
+  font-weight: 700;
   border: none;
   cursor: pointer;
 }

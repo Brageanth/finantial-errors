@@ -1,6 +1,7 @@
 type Comment @model {
   comment: String!
   name: String
+  videoId: String
   id: ID!
 }
 

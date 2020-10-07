@@ -19,6 +19,8 @@ export default function CountdownPage({ date, ready }: any) {
     }
   }, [countdown]);
 
+  const finalNumber = (number: Number) => `0${number}`.slice(-2);
+
   return (
     <div className="containerCountDown">
       <h1 className="title">
@@ -31,7 +33,8 @@ export default function CountdownPage({ date, ready }: any) {
           La clase se liberará en:
         </h2>
         <h1 className="title countdown">
-          {countdown.hours()}:{countdown.minutes()}:{countdown.seconds()}
+          {finalNumber(countdown.days() * 24 + countdown.hours())}:
+          {finalNumber(countdown.minutes())}:{finalNumber(countdown.seconds())}
         </h1>
       </div>
     </div>

@@ -23,6 +23,7 @@ export default function VideoPage() {
   const [video, setVideo] = useState();
   const [videos, setVideos] = useState();
   const [ready, setReady] = useState(false);
+  const videoId = window.location.pathname.split("/")[1].replace(/\D+/g, "");
 
   useEffect(() => {
     fetchVideos();
@@ -33,9 +34,6 @@ export default function VideoPage() {
       const videoData: any = await API.graphql(graphqlOperation(listVideos));
       const videos = videoData.data.listVideos.items;
       setVideos(videos);
-      const videoId = window.location.pathname
-        .split("/")[1]
-        .replace(/\D+/g, "");
       setVideo(
         videos.find((pVideo: any) => pVideo.title === `Clase #${videoId}`)
       );
@@ -73,17 +71,18 @@ export default function VideoPage() {
         <div className="btn-download">
           <h3>Descarga tu workbook de la {video.title} aqui</h3>
           <a className="btn" target="_blank" href={video.pdf}>
-            <img
-              src="https://lh3.googleusercontent.com/proxy/KFvNQ_ap8Cx4Jn11srQzt72hV41dqS__LuDDPIVHWGCI6Sp66zPhKZQieTSNC0_MdhBsJ_tMJA67OZniWCa_GTa5NBUVZUOvUmfmIwDbdghtPa8GIQN73GSvMvUEkBg8"
-              alt="Botton-Donwload"
-              style={{ fill: "white" }}
-            />
+            <div style={{ width: "15%" }}>
+              <img
+                src="/img/download-icon.svg"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
             <h1>Descargar</h1>
           </a>
         </div>
-        <img src="../img/Workbook-Clase1 (2).png" alt="WorkBook" />
+        <img src={`../img/Workbook-Clase${videoId}.png`} alt="WorkBook" />
       </section>
-      <ComingVideo id={video?.id} />
+      <ComingVideo id={video?.id} videos={videos} />
       <section className="commit-box">
         <div className="redes">
           <div className="link-instgram">
@@ -95,7 +94,7 @@ export default function VideoPage() {
             <a href="#">@RamiroReyesOficial</a>
           </div>
         </div>
-        <Comments video={video} />
+        <Comments video={video} videoId={videoId} />
       </section>
       <footer>
         <div className="pie">

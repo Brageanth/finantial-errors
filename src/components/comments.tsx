@@ -1,11 +1,10 @@
 import { API, graphqlOperation } from "aws-amplify";
-import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { createComment, updateVideo } from "../graphql/mutations";
 import { listComments } from "../graphql/queries";
 import CommentModel from "../models/CommentModel";
 
-export default function Comments({ video }: any) {
+export default function Comments({ video, videoId }: any) {
   const [comments, setComments] = useState<any[]>([]);
   const [comment, setComment] = useState("");
   const [name, setName] = useState("");
@@ -24,16 +23,14 @@ export default function Comments({ video }: any) {
         graphqlOperation(listComments)
       );
       const commentsState = commentData.data.listComments.items;
-      const finalState: any[] = [];
-      video.comments.map((commentVideo: string) => {
-        const commentFind: any = commentsState.find(
-          (commentRes: any) => commentRes.id === commentVideo
-        );
-        if (commentFind) {
-          finalState.push(commentFind);
-        }
-      });
-      setComments(commentsState);
+
+      setComments(
+        commentsState.filter((commentRes: any) =>
+          videoId === "1"
+            ? !commentRes.videoId
+            : commentRes.videoId === video.id
+        )
+      );
     } catch (err) {
       console.log("error fetching comments", err);
     }
@@ -42,12 +39,11 @@ export default function Comments({ video }: any) {
   async function sendComment() {
     try {
       const newComment: any = await API.graphql(
-        graphqlOperation(createComment, { input: { comment, name } })
+        graphqlOperation(createComment, { input: { comment, name, videoId } })
       );
       const commentData = newComment.data.createComment;
-      const newComments = video.comments || [];
+      const newComments = video.comments.slice(0) || [];
       newComments.push(commentData.id);
-      console.log(name);
 
       await API.graphql(
         graphqlOperation(updateVideo, {
@@ -66,13 +62,13 @@ export default function Comments({ video }: any) {
     <>
       <div className="commits">
         <h2>
-          Queremos saber que te parecio esta clase Dejanos tus comentarios
+          Queremos saber que te pareció esta clase. Déjanos tus comentarios
         </h2>
         <div style={{ margin: "1% 0" }}>
           <input
             onChange={(event) => setName(event.target.value)}
             placeholder={"Nombre"}
-            style={{ width: "100%" }}
+            style={{ width: "100%", border: "none", padding: "1%" }}
           />
         </div>
         <div>
