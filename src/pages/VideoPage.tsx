@@ -73,7 +73,7 @@ export default function VideoPage() {
           <a className="btn" target="_blank" href={video.pdf}>
             <div style={{ width: "15%" }}>
               <img
-                src="/img/download-icon.svg"
+                src="https://finantial-errors-cdn.s3.amazonaws.com/img/download-icon.svg"
                 style={{ width: "100%", height: "100%" }}
               />
             </div>
