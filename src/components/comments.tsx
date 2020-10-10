@@ -3,10 +3,11 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { createComment, updateVideo } from "../graphql/mutations";
 import { listComments } from "../graphql/queries";
+import InfiniteScroll from "react-infinite-scroll-component";
 import CommentModel from "../models/CommentModel";
 
 export default function Comments({ video, videoId, postDate }: any) {
-  const [comments, setComments] = useState<any[]>([]);
+  const [comments, setComments] = useState<ConcatArray<never>>([]);
   const [comment, setComment] = useState("");
   const [name, setName] = useState("");
 
@@ -21,18 +22,16 @@ export default function Comments({ video, videoId, postDate }: any) {
   async function fetchComments() {
     try {
       const commentData: any = await API.graphql(
-        graphqlOperation(listComments)
+        graphqlOperation(listComments, {
+          filter: {
+            videoId: {
+              eq: "1",
+            },
+          },
+        })
       );
-      const commentsState = commentData.data.listComments.items;
 
-      setComments(
-        commentsState.filter((commentRes: any) =>
-          postDate
-            ? moment(commentRes.createdAt).isSameOrAfter(moment(video.date)) &&
-              moment(commentRes.createdAt).isBefore(moment(postDate))
-            : moment(commentRes.createdAt).isSameOrAfter(moment(video.date))
-        )
-      );
+      setComments([].concat(commentData.data.listComments.items, comments));
     } catch (err) {
       console.log("error fetching comments", err);
     }
@@ -52,7 +51,7 @@ export default function Comments({ video, videoId, postDate }: any) {
           input: { id: video.id, comments: newComments },
         })
       );
-      const finalComments: any[] = [];
+      const finalComments: [] = [];
       setComments(finalComments.concat(comments, commentData));
       setComment("");
     } catch (err) {
@@ -88,32 +87,45 @@ export default function Comments({ video, videoId, postDate }: any) {
           </button>
         </div>
       </div>
-      {comments
-        .slice(0)
-        .reverse()
-        .map((comment: CommentModel) => (
-          <div className="commits">
-            <div
-              style={{
-                background: "#d7dbdd",
-                margin: "0.5% 0",
-                textAlign: "left",
-                fontFamily: "aileron, poppins",
-              }}
-            >
-              <span
+      <InfiniteScroll
+        dataLength={comments.length} //This is important field to render the next data
+        next={() => fetchComments()}
+        hasMore={true}
+        loader={<h4>Loading...</h4>}
+        endMessage={
+          <p style={{ textAlign: "center" }}>
+            <b>Yay! You have seen it all</b>
+          </p>
+        }
+      >
+        {comments
+          .slice(0)
+          .reverse()
+          .map((comment: CommentModel) => (
+            <div className="commits">
+              <div
                 style={{
-                  fontFamily: "aileron-black, poppins",
-                  fontWeight: 700,
+                  background: "#d7dbdd",
+                  margin: "0.5% 0",
+                  textAlign: "left",
+                  fontFamily: "aileron, poppins",
                 }}
               >
-                {comment.name || ""}
-              </span>
-              <br />
-              {comment.comment}
+                <span
+                  style={{
+                    fontFamily: "aileron-black, poppins",
+                    fontWeight: 700,
+                  }}
+                >
+                  {comment.name || ""}
+                </span>
+                <br />
+                {comment.comment}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+      </InfiniteScroll>
+      <div>Cargar más</div>
     </>
   );
 }

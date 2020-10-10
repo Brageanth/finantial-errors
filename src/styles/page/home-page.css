@@ -23,6 +23,11 @@
   margin: 0;
 }
 
+.loader {
+  font-family: aileron-black, poppins;
+  font-weight: 700;
+}
+
 /* Componente Header */
 
 .header {
