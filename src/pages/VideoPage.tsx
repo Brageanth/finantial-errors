@@ -80,13 +80,13 @@ export default function VideoPage() {
             <h1>Descargar</h1>
           </a>
         </div>
-        <img src={`../img/Workbook-Clase${videoId}.png`} alt="WorkBook" />
+        <img src={`https://finantial-errors-cdn.s3.amazonaws.com/img/Workbook-Clase${videoId}.png`} alt="WorkBook" />
       </section>
       <ComingVideo id={video?.id} videos={videos} />
       <section className="commit-box">
         <div className="redes">
           <div className="link-instgram">
-            <img src="../img/instagram.png" alt="Icon-Instagram" />
+            <img src="https://finantial-errors-cdn.s3.amazonaws.com/img/instagram.png" alt="Icon-Instagram" />
             <a
               href="https://www.instagram.com/YennyCastanedaOficial"
               target="_blank"
@@ -96,7 +96,7 @@ export default function VideoPage() {
             </a>
           </div>
           <div className="link-instgram">
-            <img src="../img/instagram.png" alt="Icon-Instagram" />
+            <img src="https://finantial-errors-cdn.s3.amazonaws.com/img/instagram.png" alt="Icon-Instagram" />
             <a
               href="https://www.instagram.com/RamiroReyesOficial"
               target="_blank"
