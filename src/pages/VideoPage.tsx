@@ -86,7 +86,7 @@ export default function VideoPage() {
       <section className="commit-box">
         <div className="redes">
           <div className="link-instgram">
-            <img src="../img/instagram.png" alt="Icon-Instagram" />
+            <img src="https://finantial-errors-cdn.s3.amazonaws.com/img/instagram.png" alt="Icon-Instagram" />
             <a
               href="https://www.instagram.com/YennyCastanedaOficial"
               target="_blank"
@@ -96,7 +96,7 @@ export default function VideoPage() {
             </a>
           </div>
           <div className="link-instgram">
-            <img src="../img/instagram.png" alt="Icon-Instagram" />
+            <img src="https://finantial-errors-cdn.s3.amazonaws.com/img/instagram.png" alt="Icon-Instagram" />
             <a
               href="https://www.instagram.com/RamiroReyesOficial"
               target="_blank"
