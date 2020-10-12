@@ -1,0 +1,13 @@
+.sectionm {
+    font-family: "poppins";
+    background-color:  #691f9c;
+    padding: 2%;
+}
+
+.sectionm h2 {
+    text-align: center;
+}
+
+.light {
+    font-weight: lighter;
+}
