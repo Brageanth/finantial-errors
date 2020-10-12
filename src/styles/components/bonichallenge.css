@@ -5,7 +5,12 @@
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    padding: 5%;
+    padding: 2% 0;
+}
+
+.contenedor {
+    width: 60vw;
+    margin: 0 auto;
 }
 
 .box-challenge h1 {
