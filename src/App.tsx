@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import VideoPage from "./pages/VideoPage";
 import moment from "moment-timezone";
 import SellsPage from "./pages/SellsPage";
+import "./styles/global.css";
 
 function App() {
   useEffect(() => {
