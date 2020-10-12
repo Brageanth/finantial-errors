@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import VideoPage from "./pages/VideoPage";
 import moment from "moment-timezone";
+import SellsPage from "./pages/SellsPage";
 
 function App() {
   useEffect(() => {
@@ -13,10 +14,8 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        {
-          // <Route path="/" exact component={HomePage} />
-        }
         <Route path="/" exact component={HomePage} />
+        <Route path="/producto" exact component={SellsPage} />
         <Route path="/:id" component={VideoPage} />
       </Switch>
     </BrowserRouter>
