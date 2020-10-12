@@ -1,5 +1,4 @@
 import { API, graphqlOperation } from "aws-amplify";
-import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { createComment, updateVideo } from "../graphql/mutations";
 import { listComments } from "../graphql/queries";
@@ -10,10 +9,11 @@ export default function Comments({ video, videoId, postDate }: any) {
   const [comments, setComments] = useState<ConcatArray<never>>([]);
   const [comment, setComment] = useState("");
   const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (comments) {
-      setTimeout(() => fetchComments(), 3000);
+      setTimeout(() => fetchComments(), 60000);
     } else {
       fetchComments();
     }
@@ -25,7 +25,7 @@ export default function Comments({ video, videoId, postDate }: any) {
         graphqlOperation(listComments, {
           filter: {
             videoId: {
-              eq: "1",
+              eq: videoId,
             },
           },
         })
@@ -39,6 +39,7 @@ export default function Comments({ video, videoId, postDate }: any) {
 
   async function sendComment() {
     try {
+      setLoading(true);
       const newComment: any = await API.graphql(
         graphqlOperation(createComment, { input: { comment, name, videoId } })
       );
@@ -54,7 +55,9 @@ export default function Comments({ video, videoId, postDate }: any) {
       const finalComments: [] = [];
       setComments(finalComments.concat(comments, commentData));
       setComment("");
+      setLoading(false);
     } catch (err) {
+      setLoading(false);
       console.log("error add comment", err);
     }
   }
@@ -82,9 +85,11 @@ export default function Comments({ video, videoId, postDate }: any) {
             placeholder={"Escribe tu comentario..."}
             onChange={(event) => setComment(event.target.value)}
           ></textarea>
-          <button className="buttonTextarea" onClick={() => sendComment()}>
-            Enviar
-          </button>
+          {loading || (
+            <button className="buttonTextarea" onClick={() => sendComment()}>
+              Enviar
+            </button>
+          )}
         </div>
       </div>
       <InfiniteScroll

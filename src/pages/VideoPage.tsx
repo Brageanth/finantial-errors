@@ -24,9 +24,25 @@ export default function VideoPage() {
   const [videos, setVideos] = useState();
   const [ready, setReady] = useState(false);
   const videoId = window.location.pathname.split("/")[1].replace(/\D+/g, "");
+  const buyDate = moment("2020-10-12 09:29");
+  const workbookDate = moment("2020-12-09 09:20");
+  const [buyButton, setBuyButton] = useState(
+    videoId === "4" && moment().isAfter(buyDate)
+  );
+  const [workbook, setWorkbook] = useState(
+    !(videoId === "4" && moment().isAfter(moment(workbookDate)))
+  );
 
   useEffect(() => {
     fetchVideos();
+    if (!buyButton) {
+      const durationBuyButton = moment.duration(moment(buyDate).diff(moment()));
+      const durationWorkbook = moment.duration(
+        moment(workbookDate).diff(moment())
+      );
+      setTimeout(() => setBuyButton(true), durationBuyButton.asMilliseconds());
+      setTimeout(() => setWorkbook(false), durationWorkbook.asMilliseconds());
+    }
   }, []);
 
   async function fetchVideos() {
@@ -50,6 +66,8 @@ export default function VideoPage() {
     return <CountdownPage date={video?.date} ready={() => setReady(true)} />;
   }
 
+  console.log(video);
+
   return (
     <div>
       <header className="header">
@@ -67,26 +85,53 @@ export default function VideoPage() {
           <iframe src={video.url}></iframe>
         </div>
       </main>
-      <section className="box-download">
-        <div className="btn-download">
-          <h3>Descarga tu workbook de la {video.title} aqui</h3>
-          <a className="btn" target="_blank" href={video.pdf}>
-            <div style={{ width: "15%" }}>
-              <img
-                src="https://finantial-errors-cdn.s3.amazonaws.com/img/download-icon.svg"
-                style={{ width: "100%", height: "100%" }}
-              />
-            </div>
-            <h1>Descargar</h1>
-          </a>
-        </div>
-        <img src={`https://finantial-errors-cdn.s3.amazonaws.com/img/Workbook-Clase${videoId}.png`} alt="WorkBook" />
-      </section>
+      {workbook && (
+        <section className="box-download">
+          <div className="btn-download">
+            <h3>Descarga tu workbook de la {video.title} aqui</h3>
+            <a className="btn" target="_blank" href={video.pdf}>
+              <div style={{ width: "15%" }}>
+                <img
+                  src="https://finantial-errors-cdn.s3.amazonaws.com/img/download-icon.svg"
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </div>
+              <h1>Descargar</h1>
+            </a>
+          </div>
+          <img
+            src={`https://finantial-errors-cdn.s3.amazonaws.com/img/Workbook-Clase${videoId}.png`}
+            alt="WorkBook"
+          />
+        </section>
+      )}
+      {buyButton && (
+        <section
+          className="box-download"
+          style={{ backgroundColor: "#d8d8d8" }}
+        >
+          <div className="btn-download">
+            <a
+              className="btn"
+              rel="noopener noreferrer"
+              target="_blank"
+              href={
+                "https://pay.hotmart.com/F20605481S?off=hev7z27q&checkoutMode=10"
+              }
+            >
+              <h1>QUIERO UNIRME</h1>
+            </a>
+          </div>
+        </section>
+      )}
       <ComingVideo id={video?.id} videos={videos} />
       <section className="commit-box">
         <div className="redes">
           <div className="link-instgram">
-            <img src="https://finantial-errors-cdn.s3.amazonaws.com/img/instagram.png" alt="Icon-Instagram" />
+            <img
+              src="https://finantial-errors-cdn.s3.amazonaws.com/img/instagram.png"
+              alt="Icon-Instagram"
+            />
             <a
               href="https://www.instagram.com/YennyCastanedaOficial"
               target="_blank"
@@ -96,7 +141,10 @@ export default function VideoPage() {
             </a>
           </div>
           <div className="link-instgram">
-            <img src="https://finantial-errors-cdn.s3.amazonaws.com/img/instagram.png" alt="Icon-Instagram" />
+            <img
+              src="https://finantial-errors-cdn.s3.amazonaws.com/img/instagram.png"
+              alt="Icon-Instagram"
+            />
             <a
               href="https://www.instagram.com/RamiroReyesOficial"
               target="_blank"
