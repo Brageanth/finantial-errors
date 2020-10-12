@@ -3,6 +3,9 @@ import SectionM from "../components/sectionM";
 
 export default function SellsPage() {
   return (
-  <SectionM />
+    <>
+      <BannerTop />
+      <SectionM />
+    </>
   );
 }

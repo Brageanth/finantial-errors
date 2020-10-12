@@ -1,0 +1,17 @@
+.imgTopProd
+{
+    display: flex;
+    padding: 50px;
+    font-family: "poppins";
+    justify-content: center;
+    align-items: center;
+}
+
+.imgTopBanner{
+    width: 25%;
+    float: left;
+}
+.imgTopProd h1
+{
+    font-size: 45px;
+}
