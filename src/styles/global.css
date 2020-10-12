@@ -1,0 +1,16 @@
+@font-face {
+    font-family: aileron-black;
+    src: url("./../assets/fonts/Aileron-Black.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: aileron;
+    src: url("./../assets/fonts/Aileron-Light.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: alexis-marie;
+    src: url("./../assets/fonts/Alexis\ Marie.ttf");
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
