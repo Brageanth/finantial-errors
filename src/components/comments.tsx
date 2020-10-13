@@ -6,10 +6,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import CommentModel from "../models/CommentModel";
 
 export default function Comments({ video, videoId, postDate }: any) {
-  const [comments, setComments] = useState<ConcatArray<never>>([]);
-  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState<any>();
+  const [comment, setComment] = useState<string>();
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [nextToken, setNextToken] = useState();
 
   useEffect(() => {
     if (comments) {
@@ -28,10 +29,23 @@ export default function Comments({ video, videoId, postDate }: any) {
               eq: videoId,
             },
           },
+          nextToken,
         })
       );
+      const commentsItems = commentData.data.listComments.items;
+      setNextToken(commentData.data.listComments.nextToken);
+      const concatComments = comments
+        ? [].concat(comments, commentsItems)
+        : commentsItems;
+      const finalComments: any = [];
 
-      setComments([].concat(commentData.data.listComments.items, comments));
+      concatComments.map((com: any) =>
+        finalComments.find((ment: any) => com.comment === ment.comment)
+          ? true
+          : finalComments.push(com)
+      );
+
+      setComments(finalComments);
     } catch (err) {
       console.log("error fetching comments", err);
     }
@@ -53,7 +67,7 @@ export default function Comments({ video, videoId, postDate }: any) {
         })
       );
       const finalComments: [] = [];
-      setComments(finalComments.concat(comments, commentData));
+      setComments(finalComments.concat(commentData, comments));
       setComment("");
       setLoading(false);
     } catch (err) {
@@ -93,7 +107,7 @@ export default function Comments({ video, videoId, postDate }: any) {
         </div>
       </div>
       <InfiniteScroll
-        dataLength={comments.length} //This is important field to render the next data
+        dataLength={comments?.length || 0}
         next={() => fetchComments()}
         hasMore={true}
         loader={<h4>Loading...</h4>}
@@ -103,32 +117,29 @@ export default function Comments({ video, videoId, postDate }: any) {
           </p>
         }
       >
-        {comments
-          .slice(0)
-          .reverse()
-          .map((comment: CommentModel) => (
-            <div className="commits">
-              <div
+        {comments?.map((comment: CommentModel) => (
+          <div className="commits">
+            <div
+              style={{
+                background: "#d7dbdd",
+                margin: "0.5% 0",
+                textAlign: "left",
+                fontFamily: "aileron, poppins",
+              }}
+            >
+              <span
                 style={{
-                  background: "#d7dbdd",
-                  margin: "0.5% 0",
-                  textAlign: "left",
-                  fontFamily: "aileron, poppins",
+                  fontFamily: "aileron-black, poppins",
+                  fontWeight: 700,
                 }}
               >
-                <span
-                  style={{
-                    fontFamily: "aileron-black, poppins",
-                    fontWeight: 700,
-                  }}
-                >
-                  {comment.name || ""}
-                </span>
-                <br />
-                {comment.comment}
-              </div>
+                {comment.name || ""}
+              </span>
+              <br />
+              {comment.comment}
             </div>
-          ))}
+          </div>
+        ))}
       </InfiniteScroll>
       <div>Cargar más</div>
     </>
