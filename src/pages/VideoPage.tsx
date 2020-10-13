@@ -26,12 +26,8 @@ export default function VideoPage() {
   const videoId = window.location.pathname.split("/")[1].replace(/\D+/g, "");
   const buyDate = moment("2020-10-12 09:29");
   const workbookDate = moment("2020-12-09 09:20");
-  const [buyButton, setBuyButton] = useState(
-    videoId === "4" && moment().isAfter(buyDate)
-  );
-  const [workbook, setWorkbook] = useState(
-    !(videoId === "4" && moment().isAfter(moment(workbookDate)))
-  );
+  const [buyButton, setBuyButton] = useState(true);
+  const [workbook, setWorkbook] = useState(false);
 
   useEffect(() => {
     fetchVideos();
@@ -108,7 +104,7 @@ export default function VideoPage() {
       {buyButton && (
         <section
           className="box-download"
-          style={{ backgroundColor: "#d8d8d8" }}
+          style={{ backgroundColor: "#d8d8d8", paddingBottom: "5vw" }}
         >
           <div className="btn-download">
             <a
