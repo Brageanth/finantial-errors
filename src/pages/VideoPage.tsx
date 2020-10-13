@@ -8,37 +8,15 @@ import CountdownPage from "./CountdownPage";
 import Comments from "./../components/comments";
 import "../styles/page/home-page.css";
 
-interface VideoData {
-  data: {
-    listVideos: {
-      items: Array<object>;
-    };
-  };
-}
-
 export default function VideoPage() {
-  // TODO: uncomment in second stage
-  // const { id } = useParams();
-
   const [video, setVideo] = useState();
   const [videos, setVideos] = useState();
   const [ready, setReady] = useState(false);
   const videoId = window.location.pathname.split("/")[1].replace(/\D+/g, "");
-  const buyDate = moment("2020-10-12 09:29");
-  const workbookDate = moment("2020-12-09 09:20");
-  const [buyButton, setBuyButton] = useState(true);
-  const [workbook, setWorkbook] = useState(false);
+  const [buyButton, setBuyButton] = useState(false);
 
   useEffect(() => {
     fetchVideos();
-    if (!buyButton) {
-      const durationBuyButton = moment.duration(moment(buyDate).diff(moment()));
-      const durationWorkbook = moment.duration(
-        moment(workbookDate).diff(moment())
-      );
-      setTimeout(() => setBuyButton(true), durationBuyButton.asMilliseconds());
-      setTimeout(() => setWorkbook(false), durationWorkbook.asMilliseconds());
-    }
   }, []);
 
   async function fetchVideos() {
