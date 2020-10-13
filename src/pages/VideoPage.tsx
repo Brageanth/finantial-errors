@@ -81,20 +81,27 @@ export default function VideoPage() {
         </section>
       )}
       {buyButton && (
-        <section
-          className="box-download"
-          style={{ backgroundColor: "#d8d8d8", paddingBottom: "5vw" }}
-        >
+        <section className="box-download" style={{ padding: "5vw 0" }}>
           <div className="btn-download">
+            <p className="upperButton1">
+              Ya son muchas familias logrando resultados que generan bienestar,
+              tranquilidad, prosperidad y felicidad y esto también es para ti.
+            </p>
+            <p className="upperButton2">
+              Pide una cita ahora mismo SÓLO si quieres saber más sobre nuestro
+              curso de Los Niños y el Dinero haciendo click en el botón de
+              abajo, te llevará a WhatsApp y entrarás en contacto con un miembro
+              de nuestro equipo.
+            </p>
             <a
               className="btn"
               rel="noopener noreferrer"
               target="_blank"
               href={
-                "https://pay.hotmart.com/F20605481S?off=hev7z27q&checkoutMode=10"
+                "https://api.whatsapp.com/send?phone=573213135626&text=%C2%A1Hola!%20%C2%BFCu%C3%A1l%20es%20la%20disponibilidad%20para%20mi%20cita%20de%20Los%20Ni%C3%B1os%20y%20El%20Dinero?"
               }
             >
-              <h1>QUIERO UNIRME</h1>
+              <h1>QUIERO MI CITA</h1>
             </a>
           </div>
         </section>
