@@ -13,7 +13,8 @@ export default function VideoPage() {
   const [videos, setVideos] = useState();
   const [ready, setReady] = useState(false);
   const videoId = window.location.pathname.split("/")[1].replace(/\D+/g, "");
-  const [buyButton, setBuyButton] = useState(false);
+  const workbook = videoId !== "4";
+  const buyButton = !workbook;
 
   useEffect(() => {
     fetchVideos();
