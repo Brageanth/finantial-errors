@@ -26,9 +26,10 @@ h6 {
 /* Encabezado Targeta Unete */
 
 .unete-head {
-  text-align: center;
-  font-size: 22px;
-  color: #835274;
+    font-family: "poppins";
+    text-align: center;
+    font-size: 22px;
+    color: #835274;
 }
 
 .unete-head h2 {
@@ -51,14 +52,14 @@ h6 {
 /* Targeta Unete */
 
 .unete-container {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  color: #835274;
-  padding: 40px 40px 10px 40px;
-  width: 50vw;
-  margin: 0 auto;
-  border: 14px solid #dad4d8;
-  border-radius: 60px;
+    font-family: "poppins";
+    font-size: 22px;
+    color: #835274;
+    padding: 40px 40px 10px 40px;
+    width: 600px;
+    margin: 0 auto;
+    border: 14px solid #dad4d8;
+    border-radius: 60px;
 }
 
 /* Precios */
