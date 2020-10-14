@@ -13,7 +13,7 @@ export default function BoniVideos() {
         <iframe src="https://player.vimeo.com/video/97376172"></iframe>
         <iframe src="https://player.vimeo.com/video/105804018"></iframe>
       </div>
-      <img className="botton-unete-ahora" src="img/Botones (2).png" alt="" />
+      <img className="botton-unete-ahora" src="/img/Botones (2).png" alt="" />
     </>
   );
 }
