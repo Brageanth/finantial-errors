@@ -7,6 +7,7 @@ import moment from "moment-timezone";
 import CountdownPage from "./CountdownPage";
 import Comments from "./../components/comments";
 import "../styles/page/home-page.css";
+import Footer from "../components/footer";
 
 export default function VideoPage() {
   const [video, setVideo] = useState();
@@ -56,7 +57,9 @@ export default function VideoPage() {
       </header>
       <main className="main-video">
         <div className="video">
-          <h2 className="h2-main-video">Dale clic al video para ver la {video.title}</h2>
+          <h2 className="h2-main-video">
+            Dale clic al video para ver la {video.title}
+          </h2>
           <iframe src={video.url}></iframe>
         </div>
       </main>
@@ -147,17 +150,7 @@ export default function VideoPage() {
           }
         />
       </section>
-      <footer>
-        <div className="pie">
-          <p>©2020 Los niños y el dinero Todos los derechos reservados</p>
-          <a
-            className="linkLegal"
-            href="https://ilya.digital/aviso-legal-y-terminos-de-uso/"
-          >
-            Aviso Legal y Términos de Uso
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

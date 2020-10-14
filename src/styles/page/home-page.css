@@ -235,6 +235,8 @@
   background: #242323;
   margin: auto;
   padding: 2% 0;
+  font-size: 2vw;
+  text-align: center;
 }
 .pie p {
   color: white;

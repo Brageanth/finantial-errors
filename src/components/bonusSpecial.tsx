@@ -1,7 +1,7 @@
 import React from "react";
 import "./../styles/components/bonusSpecial.css";
 
-export function BonusSpecial() {
+export default function BonusSpecial() {
   return (
     <div className="bonusSpecial">
       <div>
