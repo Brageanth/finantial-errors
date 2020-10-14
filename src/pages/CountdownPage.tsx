@@ -1,5 +1,6 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
+import BannerProducto from "../components/bannerProducto";
 import "./../styles/page/CountdownPage.css";
 
 export default function CountdownPage({ date, ready }: any) {
@@ -23,21 +24,20 @@ export default function CountdownPage({ date, ready }: any) {
     number.toString().length < 2 ? `0${number}`.slice(-2) : number;
 
   return (
-    <div className="containerCountDown">
-      <h1 className="title">
-        04 errores financieros fatales que podríamos estar cometiendo con
-        nuestros hijos
-      </h1>
-
-      <div className="rectangleCountdown">
-        <h2 className="title countdown" style={{ fontSize: "3vw" }}>
-          La clase se liberará en:
-        </h2>
-        <h1 className="title countdown">
-          {finalNumber(countdown.days() * 24 + countdown.hours())}:
-          {finalNumber(countdown.minutes())}:{finalNumber(countdown.seconds())}
-        </h1>
+    <>
+      <BannerProducto />
+      <div className="containerCountDown">
+        <div className="rectangleCountdown">
+          <h2 className="title countdown" style={{ fontSize: "3vw" }}>
+            La clase se liberará en:
+          </h2>
+          <h1 className="title countdown">
+            {finalNumber(countdown.days() * 24 + countdown.hours())}:
+            {finalNumber(countdown.minutes())}:
+            {finalNumber(countdown.seconds())}
+          </h1>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
