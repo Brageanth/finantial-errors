@@ -44,7 +44,7 @@ export default function VideoPage() {
   console.log(video);
 
   return (
-    <div>
+    <div className="home-page">
       <header className="header">
         <div className="header-text">
           <h2>04</h2>
@@ -56,7 +56,7 @@ export default function VideoPage() {
       </header>
       <main className="main-video">
         <div className="video">
-          <h2>Dale clic al video para ver la {video.title}</h2>
+          <h2 className="h2-main-video">Dale clic al video para ver la {video.title}</h2>
           <iframe src={video.url}></iframe>
         </div>
       </main>
