@@ -1,21 +1,26 @@
-h1,h2,h3,h4,h5,h6 {
-    font-size:100%;
-    font-weight:normal;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
 }
 
 .icon-small {
-    height: 20px;
+  height: 20px;
 }
 
 .edit-li li {
-    list-style: none;
-    display: flex;
-    align-items: baseline;
-    padding-bottom: 14px;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 14px;
 }
 
 .edit-li li img {
-    padding-right: 8px;
+  padding-right: 8px;
 }
 
 /* Encabezado Targeta Unete */
@@ -28,20 +33,20 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .unete-head h2 {
-    font-size: 40px;
-    padding: 30px 0;
+  font-size: 40px;
+  padding: 30px 0;
 }
 
 .unete-head p {
-    line-height: 30px;
+  line-height: 30px;
 }
 
 .unete-head h2 span {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .p-padding {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 /* Targeta Unete */
@@ -60,49 +65,49 @@ h1,h2,h3,h4,h5,h6 {
 /* Precios */
 
 .unete-precio {
-    text-align: center;
-    line-height: 40px;
+  text-align: center;
+  line-height: 40px;
 }
 
 .precio-anterior {
-    font-size: 26px;
-    font-weight: 700;
-    text-decoration-line: line-through;
-    padding-bottom: 10px;
+  font-size: 26px;
+  font-weight: 700;
+  text-decoration-line: line-through;
+  padding-bottom: 10px;
 }
 
 .precio-final {
-    color: #ff5f5f;
-    font-weight: 700;
-    font-size: 40px;
-    padding-bottom: 40px;
+  color: #ff5f5f;
+  font-weight: 700;
+  font-size: 40px;
+  padding-bottom: 40px;
 }
 
 /* Bonus del Programa */
 
 .bonus-programa {
-    font-weight: 700;
-    display: flex;
-    align-items: baseline;
-    padding: 20px 0 24px 0;
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  padding: 20px 0 24px 0;
 }
 
 .bonus-programa h2 {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .bonus-programa img {
-    padding-right: 8px;
+  padding-right: 8px;
 }
 
 .padding-li {
-    padding-left: 40px;
+  padding-left: 40px;
 }
 
 /* Boton */
 
 .boton-unete {
-    display:block;
-    margin:auto;
-    width: 400px;
+  display: block;
+  margin: auto;
+  width: 400px;
 }
