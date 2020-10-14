@@ -1,0 +1,9 @@
+.fondoBanner{
+    background-image: url(https://finantial-errors-cdn.s3.amazonaws.com/img/BackgroundProduct.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: alexis-marie;
+    width: 100%;
+
+}
