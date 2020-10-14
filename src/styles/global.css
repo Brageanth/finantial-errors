@@ -1,16 +1,34 @@
 @font-face {
-    font-family: aileron-black;
-    src: url("./../assets/fonts/Aileron-Black.otf") format("opentype");
-  }
-  
-  @font-face {
-    font-family: aileron;
-    src: url("./../assets/fonts/Aileron-Light.otf") format("opentype");
-  }
-  
-  @font-face {
-    font-family: alexis-marie;
-    src: url("./../assets/fonts/Alexis\ Marie.ttf");
-  }
-  
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+  font-family: aileron-black;
+  src: url("./../assets/fonts/Aileron-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: aileron;
+  src: url("./../assets/fonts/Aileron-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: alexis-marie;
+  src: url("./../assets/fonts/Alexis\ Marie.ttf");
+}
+
+@font-face {
+  font-family: "Visby CF";
+  src: local("Visby CF Demi Bold"), local("Visby-CF-Demi-Bold"),
+    url("/fonts/VisbyCF-DemiBold.woff2") format("woff2"),
+    url("/fonts/VisbyCF-DemiBold.woff") format("woff"),
+    url("/fonts/VisbyCF-DemiBold.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Visby CF";
+  src: local("Visby CF Heavy"), local("Visby-CF-Heavy"),
+    url("/fonts/VisbyCF-Heavy.woff2") format("woff2"),
+    url("/fonts/VisbyCF-Heavy.woff") format("woff"),
+    url("/fonts/VisbyCF-Heavy.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");

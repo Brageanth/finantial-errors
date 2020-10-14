@@ -1,9 +1,32 @@
-.fondoBanner{
-    background-image: url(https://finantial-errors-cdn.s3.amazonaws.com/img/BackgroundProduct.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    font-family: alexis-marie;
-    width: 100%;
+.fondoBanner {
+  background-image: url(https://finantial-errors-cdn.s3.amazonaws.com/img/BackgroundProduct.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  font-family: Visby CF;
+  padding: 5vw 10vw;
+  text-align: right;
+  color: white;
+  font-size: 4.5vw;
+  text-shadow: 2px 1.5px 0 rgba(0, 0, 0, 0.5);
+}
 
+.fondoBanner > h1 {
+  text-align: center;
+}
+
+.fondoBanner > h1 > span {
+  font-weight: 700;
+}
+
+.fondoBanner > h3 {
+  font-size: 1.8vw;
+  text-align: center;
+  margin: 1vw 0;
+  text-shadow: none;
+}
+
+.fondoBanner > img {
+  width: 5vw;
+  align-self: right;
 }
