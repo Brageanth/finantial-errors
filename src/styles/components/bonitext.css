@@ -49,6 +49,7 @@ h1,h2,h3,h4,h5,h6 {
 .title-box {
     display: flex;
     align-items: flex-start;
+    padding-bottom: 10px;
 }
 
 .title-box h2 {
