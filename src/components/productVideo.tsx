@@ -34,8 +34,8 @@ export default function ProductVideo() {
       </div>
       <iframe
         style={{ marginBottom: "10vw" }}
-        width="560"
-        height="315"
+        width="720"
+        height="423"
         src="https://www.youtube.com/embed/lRs5mGAjDMc"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       />
