@@ -1,0 +1,29 @@
+.titNormi{
+    font-family: Visby CF;
+    text-align: center;
+    color: #825274;
+    font-size: 40px;
+    margin: 30px;
+}
+.titNormi > h1 > span{
+    font-weight: 700;
+}
+.contenedorColum{
+    font-family: Visby CF;
+}
+.container222{
+    display: flex;
+    padding: 180px;
+    color: #825274;
+}
+paqImg{
+    flex-grow: 3;
+    align-items: center;
+
+}
+.paqImg > div > img{
+    width: 70%;
+}
+.contenedorColum > h2 > span{
+    font-weight: 700;
+}
