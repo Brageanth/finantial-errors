@@ -1,23 +1,35 @@
-h1,h2,h3,h4,h5,h6 {
-    font-size:100%;
-    font-weight:normal;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
 }
 
 .title-h2 {
-    font-family: "poppins";
-    text-align: center;
-    font-size: 22px;
-    color: #835274;
-    padding-bottom: 40px;
+  font-family: Visby CF;
+  text-align: center;
+  font-size: 30px;
+  margin: 0 12vw;
+  color: #835274;
+  padding-bottom: 40px;
 }
 
 .list-videos {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 5vw;
+}
+
+.list-videos > iframe {
+  width: 200px;
+  height: 120px;
 }
 
 .botton-unete-ahora {
-    display: block;
-    margin: 0 auto;
-    height: 250px;
+  display: block;
+  margin: 0 auto;
+  height: 200px;
 }
