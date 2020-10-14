@@ -5,7 +5,7 @@ export default function BoniVideos() {
   return (
     <>
       <h2 className="title-h2">
-        Aquí tienes historias de familias que ya han utilizado nuestro método:
+        Aquí tienes historias de algunas familias que ya han utilizado nuestro método:
       </h2>
       <div className="list-videos">
         <iframe src="https://player.vimeo.com/video/74743801"></iframe>
