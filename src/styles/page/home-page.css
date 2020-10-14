@@ -1,9 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  text-align: center;
-  margin: 0;
 }
 
 .loader {
@@ -180,7 +177,7 @@
 }
 
 .btn-download {
-  width: 40%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,13 +195,18 @@
 }
 
 .btn {
-  width: 20vw;
+  width: 21vw;
   background: #825274;
   padding: 1rem 1rem;
+  margin-top: 1rem;
   border-radius: 5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.btn > h1 {
+  font-size: 2vw;
 }
 
 .btn-download a {
@@ -242,6 +244,21 @@
   font-weight: 700;
   border: none;
   cursor: pointer;
+}
+
+.upperButton1 {
+  font-family: aileron, poppins;
+  font-size: 1.7vw;
+  color: #666666;
+  text-align: justify;
+  font-weight: 700;
+}
+
+.upperButton2 {
+  font-family: alexis-marie;
+  font-size: 1.7vw;
+  color: #666666;
+  text-align: justify;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {

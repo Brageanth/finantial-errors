@@ -8,41 +8,16 @@ import CountdownPage from "./CountdownPage";
 import Comments from "./../components/comments";
 import "../styles/page/home-page.css";
 
-interface VideoData {
-  data: {
-    listVideos: {
-      items: Array<object>;
-    };
-  };
-}
-
 export default function VideoPage() {
-  // TODO: uncomment in second stage
-  // const { id } = useParams();
-
   const [video, setVideo] = useState();
   const [videos, setVideos] = useState();
   const [ready, setReady] = useState(false);
   const videoId = window.location.pathname.split("/")[1].replace(/\D+/g, "");
-  const buyDate = moment("2020-10-12 09:29");
-  const workbookDate = moment("2020-12-09 09:20");
-  const [buyButton, setBuyButton] = useState(
-    videoId === "4" && moment().isAfter(buyDate)
-  );
-  const [workbook, setWorkbook] = useState(
-    !(videoId === "4" && moment().isAfter(moment(workbookDate)))
-  );
+  const workbook = videoId !== "4";
+  const buyButton = !workbook;
 
   useEffect(() => {
     fetchVideos();
-    if (!buyButton) {
-      const durationBuyButton = moment.duration(moment(buyDate).diff(moment()));
-      const durationWorkbook = moment.duration(
-        moment(workbookDate).diff(moment())
-      );
-      setTimeout(() => setBuyButton(true), durationBuyButton.asMilliseconds());
-      setTimeout(() => setWorkbook(false), durationWorkbook.asMilliseconds());
-    }
   }, []);
 
   async function fetchVideos() {
@@ -106,20 +81,27 @@ export default function VideoPage() {
         </section>
       )}
       {buyButton && (
-        <section
-          className="box-download"
-          style={{ backgroundColor: "#d8d8d8" }}
-        >
+        <section className="box-download" style={{ padding: "5vw 0" }}>
           <div className="btn-download">
+            <p className="upperButton1">
+              Ya son muchas familias logrando resultados que generan bienestar,
+              tranquilidad, prosperidad y felicidad y esto también es para ti.
+            </p>
+            <p className="upperButton2">
+              Pide una cita ahora mismo SÓLO si quieres saber más sobre nuestro
+              curso de Los Niños y el Dinero haciendo click en el botón de
+              abajo, te llevará a WhatsApp y entrarás en contacto con un miembro
+              de nuestro equipo.
+            </p>
             <a
               className="btn"
               rel="noopener noreferrer"
               target="_blank"
               href={
-                "https://pay.hotmart.com/F20605481S?off=hev7z27q&checkoutMode=10"
+                "https://api.whatsapp.com/send?phone=573213135626&text=%C2%A1Hola!%20%C2%BFCu%C3%A1l%20es%20la%20disponibilidad%20para%20mi%20cita%20de%20Los%20Ni%C3%B1os%20y%20El%20Dinero?"
               }
             >
-              <h1>QUIERO UNIRME</h1>
+              <h1>QUIERO MI CITA</h1>
             </a>
           </div>
         </section>
