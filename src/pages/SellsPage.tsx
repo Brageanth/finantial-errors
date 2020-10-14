@@ -3,6 +3,7 @@ import BannerTop from "../components/bannerTop";
 import SectionM from "../components/sectionM";
 import BoniChallenge from "../components/bonichallenge"
 import SectionInfo from "../components/sectionInfo"
+import UneteVentas from "../components/uneteVentas"
 
 export default function SellsPage() {
   return (
@@ -11,6 +12,7 @@ export default function SellsPage() {
       <SectionM />
       <BoniChallenge />
       <SectionInfo />
+      <UneteVentas />
     </>
   );
 }

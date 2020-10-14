@@ -8,6 +8,6 @@ export default function SectionM() {
           <h2>"Tanto si crees que puedes como si crees que no puedes, estas en lo cierto"</h2>
           <h2 className="light">Henry Ford</h2>
         </div>
-      </div>
+      </div>  
   );
 }
