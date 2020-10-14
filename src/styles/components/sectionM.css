@@ -1,7 +1,13 @@
 .sectionm {
     font-family: "poppins";
     background-color:  #691f9c;
-    padding: 2%;
+    padding: 2% 0;
+    color: white;
+}
+
+.contenedor {
+    width: 60vw;
+    margin: 0 auto;
 }
 
 .sectionm h2 {

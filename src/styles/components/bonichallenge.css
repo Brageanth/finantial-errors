@@ -1,0 +1,38 @@
+.box-challenge {
+    font-family: "poppins";
+    background-image: url("/img/Fondo 2.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding: 2% 0;
+}
+
+.contenedor {
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.box-challenge h1 {
+    margin-bottom: 4%;
+    text-align: center;
+}
+
+.small {
+    height: 20px;
+    padding-right: 10px;
+}
+
+.list {
+    list-style: none;
+    margin-bottom: 5%;
+}
+
+.list li {
+    display: flex;
+    align-items: center;
+}
+
+p span {
+    font-weight: bold;
+}
