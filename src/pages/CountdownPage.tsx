@@ -13,7 +13,8 @@ export default function CountdownPage({ date, ready }: any) {
       moment(date).valueOf() - moment().valueOf(),
       "milliseconds"
     );
-    if (diff) {
+
+    if (diff.asMilliseconds() > 0) {
       setTimeout(() => setCountdown(diff), 1000);
     } else {
       ready();
