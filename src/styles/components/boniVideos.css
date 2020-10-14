@@ -1,0 +1,23 @@
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:normal;
+}
+
+.title-h2 {
+    font-family: "poppins";
+    text-align: center;
+    font-size: 22px;
+    color: #835274;
+    padding-bottom: 40px;
+}
+
+.list-videos {
+    display: flex;
+    justify-content: space-around;
+}
+
+.botton-unete-ahora {
+    display: block;
+    margin: 0 auto;
+    height: 250px;
+}

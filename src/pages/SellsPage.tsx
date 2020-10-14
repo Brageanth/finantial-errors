@@ -5,6 +5,7 @@ import GirlPart from "../components/girlPart";
 import UneteVentas from "../components/uneteVentas";
 import BoniText from "../components/bonitext"
 import AvisoPeque from "../components/avisoPeque";
+import BoniVideos from "../components/boniVideos"
 
 export default function SellsPage() {
   return (
@@ -15,6 +16,7 @@ export default function SellsPage() {
       <AvisoPeque />
       <UneteVentas />
       <BoniText />
+      <BoniVideos />
     </>
   );
 }
