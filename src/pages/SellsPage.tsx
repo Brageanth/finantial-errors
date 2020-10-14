@@ -4,6 +4,7 @@ import ProductVideo from "../components/productVideo";
 import GirlPart from "../components/girlPart";
 import UneteVentas from "../components/uneteVentas";
 import AvisoPeque from "../components/avisoPeque";
+import ProgramaCurso from "../components/programaCurso";
 
 export default function SellsPage() {
   return (
@@ -12,6 +13,7 @@ export default function SellsPage() {
       <ProductVideo />
       <GirlPart />
       <AvisoPeque />
+      <ProgramaCurso />
       <UneteVentas />
     </>
   );

@@ -2,14 +2,16 @@
     font-family: Visby CF;
     background: #E2E2E2;
     text-align: center;
-    padding: 4%;
+    padding: 7%;
 }
 .barraSupe > h1{
     font-size: 50px;
+    color: #825274;
 }
 .barraSupe > h1 > span{
     font-weight: 700;
 }
 .barraSupe > h2{
     font-size: 27px;
+    color: #825274;
 }
