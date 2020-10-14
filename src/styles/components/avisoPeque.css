@@ -1,15 +1,15 @@
-.barraSupe{
-    font-family: Visby CF;
-    background: #E2E2E2;
-    text-align: center;
-    padding: 4%;
+.barraSupe {
+  font-family: Visby CF;
+  background: #e2e2e2;
+  text-align: center;
+  padding: 4%;
 }
-.barraSupe > h1{
-    font-size: 50px;
+.barraSupe > h1 {
+  font-size: 50px;
 }
-.barraSupe > h1 > span{
-    font-weight: 700;
+.barraSupe > h1 > span {
+  font-weight: 700;
 }
-.barraSupe > h2{
-    font-size: 27px;
+.barraSupe > h2 {
+  font-size: 27px;
 }
