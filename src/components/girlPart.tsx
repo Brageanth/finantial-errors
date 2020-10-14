@@ -7,7 +7,7 @@ export default function GirlPart() {
       <div className="imgNina">
         <img
           src="https://finantial-errors-cdn.s3.amazonaws.com/img/nina.png"
-          style={{ width: "100%" }}
+          style={{ width: "100%", position: "absolute", left: 0, bottom: 0 }}
         />
       </div>
       <div className="leftContainer">
@@ -25,7 +25,9 @@ export default function GirlPart() {
           <div>
             <img
               src="https://finantial-errors-cdn.s3.amazonaws.com/img/IconoPc.png"
-              style={{ width: "100%" }}
+              style={{
+                width: "100%",
+              }}
             />
           </div>
           <h5>Inscripciones abiertas hasta el 17 de octubre</h5>

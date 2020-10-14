@@ -32,13 +32,15 @@ export default function ProductVideo() {
           </a>
         </div>
       </div>
-      <iframe
-        style={{ marginBottom: "10vw" }}
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/lRs5mGAjDMc"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      />
+      <div className="iframe">
+        <iframe
+          style={{ marginBottom: "10vw" }}
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/lRs5mGAjDMc"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        />
+      </div>
     </div>
   );
 }

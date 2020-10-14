@@ -27,3 +27,21 @@
   color: #666666;
   font-size: 1.5vw;
 }
+
+.iframe {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.iframe > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 13%;
+  width: 74%;
+  height: 74%;
+}
