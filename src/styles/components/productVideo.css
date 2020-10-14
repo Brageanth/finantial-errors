@@ -1,27 +1,30 @@
-.fondoParteVid{
-    background: #D0CFD1;
+.fondoParteVid {
+  background: #d0cfd1;
+  text-align: center;
 }
 .insta-perfil {
-    padding-right: 10rem;
-    padding: 2rem;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    background: white;
+  padding: 1rem 1.5rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background: white;
+  width: fit-content;
+  margin: 1.5vw 2.5vw;
 }
-  
-.insta-perfil img {
-    height: 1.2rem;
-    margin: 0 3%;
-}
-  
-.insta-perfil:last-of-type {
-    padding: 0;
-}
-  
-.insta-perfil a {
-   text-decoration: none;
-   font-family: aileron, poppins;
-   color: #666666;
 
+.instagrams {
+  display: flex;
+  justify-content: center;
+}
+
+.insta-perfil img {
+  height: 1.2rem;
+  margin: 0 3%;
+}
+
+.insta-perfil a {
+  text-decoration: none;
+  font-family: Visby CF;
+  color: #666666;
+  font-size: 1.5vw;
 }

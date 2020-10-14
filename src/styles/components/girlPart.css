@@ -1,4 +1,52 @@
-.imgNina{
-    width: 40%;
-    float: left;
+.girlPart {
+  padding: 5vw 10vw;
+  display: flex;
+}
+
+.girlPart > .leftContainer {
+  text-align: center;
+  max-width: 50%;
+  color: #835274;
+}
+
+.imgNina {
+  width: 50%;
+}
+
+.imgTexto {
+  width: 70%;
+}
+
+.textImg {
+  font-family: Visby CF;
+}
+
+.textImg > h3 {
+  font-size: 2vw;
+}
+
+.textImg > h4 {
+  margin-top: 0.7vw;
+  font-size: 1.6vw;
+}
+
+.iconPc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2vw 0;
+}
+
+.iconPc > div {
+  width: 7%;
+  margin: 0 0.5vw;
+}
+
+.botonUneteAhora {
+  width: 50%;
+  margin: -2vw 0;
+}
+
+.botonUneteAhora:focus {
+  outline: none;
 }

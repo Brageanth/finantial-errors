@@ -86,7 +86,7 @@ export default function Comments({ video, videoId, postDate }: any) {
           <input
             onChange={(event) => setName(event.target.value)}
             placeholder={"Nombre"}
-            style={{ width: "100%", border: "none", padding: "1%" }}
+            style={{ width: "100%", border: "none" }}
           />
         </div>
         <div>

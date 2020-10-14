@@ -1,0 +1,70 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+.icon-small {
+  height: 22px;
+}
+
+/* Caja Total Text */
+
+.text-container {
+  width: 80vw;
+  margin: 0 auto;
+  font-family: "poppins";
+  color: #835274;
+}
+
+/* Head Text */
+
+.head-text {
+  text-align: center;
+  font-size: 20px;
+}
+
+.head-text p {
+  line-height: 30px;
+}
+
+.head-text h2 {
+  font-weight: 700;
+  font-size: 42px;
+  padding: 20px 0;
+  text-shadow: 2px 2px 0 #d5b7ca;
+}
+
+/* Secciones de Texto */
+
+.text-section {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 60px;
+}
+
+.section-boxs {
+  width: 30%;
+}
+
+.title-box {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 10px;
+}
+
+.title-box h2 {
+  font-weight: 700;
+}
+
+.box {
+  padding-bottom: 40px;
+}
+
+.box-2 p {
+  padding-bottom: 18px;
+}

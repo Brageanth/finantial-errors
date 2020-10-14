@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
+  max-height: 210px;
   font-family: Visby CF;
   padding: 5vw 10vw;
   text-align: right;

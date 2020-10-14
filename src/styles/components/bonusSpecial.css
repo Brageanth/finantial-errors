@@ -1,0 +1,24 @@
+.bonusSpecial {
+  background-color: #e2e2e2;
+  padding: 5vw 7vw;
+  margin: 5vw 0;
+  font-family: Visby CF;
+}
+
+.bonusSpecial > div {
+  background-color: white;
+  padding: 4vw 12vw;
+  text-align: center;
+  color: #835274;
+}
+
+.bonusSpecial > div > h1 {
+  font-size: 4.5vw;
+  font-weight: 700;
+  margin-bottom: 3vw;
+  text-shadow: 2.5px 2px 0 #d5b7ca;
+}
+
+.bonusSpecial > div > p {
+  font-size: 2vw;
+}

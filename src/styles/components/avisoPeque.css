@@ -8,8 +8,11 @@
     font-size: 50px;
     color: #825274;
 }
-.barraSupe > h1 > span{
-    font-weight: 700;
+.barraSupe > h1 > span {
+  font-weight: 700;
+}
+.barraSupe > h2 {
+  font-size: 27px;
 }
 .barraSupe > h2{
     font-size: 27px;
