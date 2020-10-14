@@ -6,6 +6,7 @@ import UneteVentas from "../components/uneteVentas";
 import BoniText from "../components/bonitext";
 import AvisoPeque from "../components/avisoPeque";
 import { BonusSpecial } from "../components/bonusSpecial";
+import BoniVideos from "../components/boniVideos"
 
 export default function SellsPage() {
   return (
@@ -17,6 +18,7 @@ export default function SellsPage() {
       <UneteVentas />
       <BonusSpecial />
       <BoniText />
+      <BoniVideos />
     </>
   );
 }

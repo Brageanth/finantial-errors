@@ -52,8 +52,9 @@ h6 {
 }
 
 .title-box {
-  display: flex;
-  align-items: flex-start;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 10px;
 }
 
 .title-box h2 {
