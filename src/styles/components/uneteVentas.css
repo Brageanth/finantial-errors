@@ -1,7 +1,7 @@
 h1,h2,h3,h4,h5,h6 {
     font-size:100%;
     font-weight:normal;
-    }
+}
 
 .icon-small {
     height: 20px;
@@ -21,6 +21,7 @@ h1,h2,h3,h4,h5,h6 {
 /* Encabezado Targeta Unete */
 
 .unete-head {
+    font-family: "poppins";
     text-align: center;
     font-size: 22px;
     color: #835274;
@@ -46,7 +47,7 @@ h1,h2,h3,h4,h5,h6 {
 /* Targeta Unete */
 
 .unete-container {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "poppins";
     font-size: 22px;
     color: #835274;
     padding: 40px 40px 10px 40px;

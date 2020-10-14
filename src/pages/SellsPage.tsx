@@ -3,6 +3,7 @@ import BannerProducto from "../components/bannerProducto";
 import ProductVideo from "../components/productVideo";
 import GirlPart from "../components/girlPart";
 import UneteVentas from "../components/uneteVentas";
+import BoniText from "../components/bonitext"
 
 export default function SellsPage() {
   return (
@@ -11,6 +12,7 @@ export default function SellsPage() {
       <ProductVideo />
       <GirlPart />
       <UneteVentas />
+      <BoniText />
     </>
   );
 }
