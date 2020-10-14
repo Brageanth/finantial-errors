@@ -17,7 +17,7 @@ export default function SellsPage() {
   const [ready, setReady] = useState(false);
 
   const showAll = () => {
-    if (moment().isSameOrAfter(moment("2020-10-14 13:30:00"))) {
+    if (moment().isSameOrAfter(moment("2020-10-14 18:30:00"))) {
       setAll(true);
       return true;
     }
@@ -31,10 +31,10 @@ export default function SellsPage() {
 
   console.log(ready);
 
-  if (moment().isSameOrBefore(moment("2020-10-14 13:25:30")) && !ready) {
+  if (moment().isSameOrBefore(moment("2020-10-14 19:00:00")) && ready) {
     return (
       <CountdownPage
-        date={moment("2020-10-14 13:25:00")}
+        date={moment("2020-10-14 19:00:00")}
         ready={() => setReady(true)}
       />
     );
@@ -44,7 +44,7 @@ export default function SellsPage() {
     <>
       <BannerProducto />
       <ProductVideo />
-      {all && (
+      {!all && (
         <>
           <GirlPart />
           <AvisoPeque />

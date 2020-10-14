@@ -30,7 +30,7 @@ export default function CountdownPage({ date, ready }: any) {
       <div className="containerCountDown">
         <div className="rectangleCountdown">
           <h2 className="title countdown" style={{ fontSize: "3vw" }}>
-            La clase se liberará en:
+            Nos vemos en:
           </h2>
           <h1 className="title countdown">
             {finalNumber(countdown.days() * 24 + countdown.hours())}:
