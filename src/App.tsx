@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={HomePage} />
+        <Route path="/" exact component={SellsPage} />
         <Route path="/webinar" exact component={SellsPage} />
         <Route path="/test/admin/webinar" exact component={SellsPage} />
         <Route path="/:id" component={VideoPage} />
