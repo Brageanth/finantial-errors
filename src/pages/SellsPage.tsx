@@ -14,23 +14,8 @@ import CountdownPage from "./CountdownPage";
 import Comments from "../components/comments";
 
 export default function SellsPage() {
-  const [all, setAll] = useState(false);
+  const path = window.location.pathname.split("/")[1];
   const [ready, setReady] = useState(false);
-
-  const showAll = () => {
-    if (moment().isSameOrAfter(moment("2020-10-14 20:30:00"))) {
-      setAll(true);
-      return true;
-    }
-    setTimeout(() => showAll(), 1000);
-    return false;
-  };
-
-  useEffect(() => {
-    showAll() && setAll(true);
-  }, []);
-
-  console.log(ready);
 
   if (moment().isSameOrBefore(moment("2020-10-14 19:00:00")) && ready) {
     return (
@@ -43,19 +28,19 @@ export default function SellsPage() {
 
   return (
     <>
-      <BannerProducto />
-      <ProductVideo />
-      {all && (
+      {!!path && (
         <>
-          <GirlPart />
-          <AvisoPeque />
-          <ProgramaCurso />
-          <UneteVentas />
-          <BonusSpecial />
-          <BoniText />
-          <BoniVideos />
+          <BannerProducto />
+          <ProductVideo />
         </>
       )}
+      <GirlPart />
+      <AvisoPeque />
+      <ProgramaCurso />
+      <UneteVentas />
+      <BonusSpecial />
+      <BoniText />
+      <BoniVideos />
       <Comments videoId={"5"} />
       <Footer />
     </>
