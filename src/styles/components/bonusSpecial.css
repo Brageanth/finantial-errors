@@ -13,12 +13,22 @@
 }
 
 .bonusSpecial > div > h1 {
-  font-size: 4.5vw;
+  font-size: 6vw;
   font-weight: 700;
   margin-bottom: 3vw;
-  text-shadow: 2.5px 2px 0 #d5b7ca;
+  text-shadow: 0.25vw 0.2vw 0 #d5b7ca;
 }
 
 .bonusSpecial > div > p {
   font-size: 2vw;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .bonusSpecial > div > h1 {
+    font-size: 7vw;
+  }
+
+  .bonusSpecial > div > p {
+    font-size: 3vw;
+  }
 }

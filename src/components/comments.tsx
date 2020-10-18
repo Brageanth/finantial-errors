@@ -4,8 +4,9 @@ import { createComment, updateVideo } from "../graphql/mutations";
 import { listComments } from "../graphql/queries";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CommentModel from "../models/CommentModel";
+import moment from "moment";
 
-export default function Comments({ video, videoId, postDate }: any) {
+export default function Comments({ videoId }: any) {
   const [comments, setComments] = useState<any>();
   const [comment, setComment] = useState<string>();
   const [name, setName] = useState("");
@@ -14,7 +15,7 @@ export default function Comments({ video, videoId, postDate }: any) {
 
   useEffect(() => {
     if (comments) {
-      setTimeout(() => fetchComments(), 60000);
+      setTimeout(() => fetchComments(), 30000);
     } else {
       fetchComments();
     }
@@ -33,6 +34,7 @@ export default function Comments({ video, videoId, postDate }: any) {
         })
       );
       const commentsItems = commentData.data.listComments.items;
+
       setNextToken(commentData.data.listComments.nextToken);
       const concatComments = comments
         ? [].concat(comments, commentsItems)
@@ -45,7 +47,11 @@ export default function Comments({ video, videoId, postDate }: any) {
           : finalComments.push(com)
       );
 
-      setComments(finalComments);
+      setComments(
+        finalComments.sort((comment1: any, comment2: any) =>
+          moment(comment1.createdAt).isAfter(comment2.createdAt) ? -1 : 1
+        )
+      );
     } catch (err) {
       console.log("error fetching comments", err);
     }
@@ -58,14 +64,7 @@ export default function Comments({ video, videoId, postDate }: any) {
         graphqlOperation(createComment, { input: { comment, name, videoId } })
       );
       const commentData = newComment.data.createComment;
-      const newComments = video.comments.slice(0) || [];
-      newComments.push(commentData.id);
 
-      await API.graphql(
-        graphqlOperation(updateVideo, {
-          input: { id: video.id, comments: newComments },
-        })
-      );
       const finalComments: [] = [];
       setComments(finalComments.concat(commentData, comments));
       setComment("");
@@ -80,7 +79,9 @@ export default function Comments({ video, videoId, postDate }: any) {
     <>
       <div className="commits">
         <h2>
-          Queremos saber que te pareció esta clase. Déjanos tus comentarios
+          {videoId === "5"
+            ? "Déjanos tus comentarios"
+            : "Queremos saber que te pareció esta clase. Déjanos tus comentarios"}
         </h2>
         <div style={{ margin: "1% 0" }}>
           <input
@@ -124,7 +125,7 @@ export default function Comments({ video, videoId, postDate }: any) {
                 background: "#d7dbdd",
                 margin: "0.5% 0",
                 textAlign: "left",
-                fontFamily: "aileron, poppins",
+                fontFamily: "poppins",
               }}
             >
               <span

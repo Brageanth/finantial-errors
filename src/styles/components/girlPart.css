@@ -59,11 +59,27 @@
   }
 
   .iconPc > h5 {
-    font-size: 1.5vw;
+    font-size: 2vw;
+  }
+
+  .textImg > h3 {
+    font-size: 3vw;
+  }
+
+  .textImg > h4 {
+    font-size: 2vw;
   }
 
   .botonUneteAhora {
-    width: 60%;
+    width: 75%;
     margin: -2vw 0;
+  }
+
+  .girlPart {
+    padding-left: 0vw;
+  }
+
+  .imgNina {
+    margin-left: -3vw;
   }
 }

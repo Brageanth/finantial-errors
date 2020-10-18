@@ -9,7 +9,7 @@ h6 {
 }
 
 .icon-small {
-  height: 20px;
+  height: 2vw;
 }
 
 .edit-li li {
@@ -19,26 +19,30 @@ h6 {
   padding-bottom: 14px;
 }
 
+.edit-li > li > h2 {
+  font-size: 2vw;
+}
+
 .edit-li li img {
-  padding-right: 8px;
+  padding-right: 0.8vw;
 }
 
 /* Encabezado Targeta Unete */
 
 .unete-head {
-    font-family: "poppins";
-    text-align: center;
-    font-size: 22px;
-    color: #835274;
+  font-family: "poppins";
+  text-align: center;
+  font-size: 1.7vw;
+  color: #835274;
 }
 
 .unete-head h2 {
-  font-size: 40px;
-  padding: 30px 0;
+  font-size: 4vw;
+  padding: 3vw 0;
 }
 
-.unete-head p {
-  line-height: 30px;
+.unete-precio h2 {
+  font-size: 4vw;
 }
 
 .unete-head h2 span {
@@ -52,25 +56,25 @@ h6 {
 /* Targeta Unete */
 
 .unete-container {
-    font-family: "poppins";
-    font-size: 22px;
-    color: #835274;
-    padding: 40px 40px 10px 40px;
-    width: 600px;
-    margin: 0 auto;
-    border: 14px solid #dad4d8;
-    border-radius: 60px;
+  font-family: "poppins";
+  font-size: 22px;
+  color: #835274;
+  padding: 40px 40px 10px 40px;
+  width: 50vw;
+  margin: 0 auto;
+  border: 14px solid #dad4d8;
+  border-radius: 60px;
 }
 
 /* Precios */
 
 .unete-precio {
   text-align: center;
-  line-height: 40px;
+  line-height: 4vw;
 }
 
 .precio-anterior {
-  font-size: 26px;
+  font-size: 2.6vw;
   font-weight: 700;
   text-decoration-line: line-through;
   padding-bottom: 10px;
@@ -79,7 +83,7 @@ h6 {
 .precio-final {
   color: #ff5f5f;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 4vw;
   padding-bottom: 40px;
 }
 
@@ -89,11 +93,12 @@ h6 {
   font-weight: 700;
   display: flex;
   align-items: baseline;
-  padding: 20px 0 24px 0;
+  padding: 2vw 0 2.4vw 0;
 }
 
 .bonus-programa h2 {
   font-weight: 700;
+  font-size: 3vw;
 }
 
 .bonus-programa img {
@@ -101,7 +106,7 @@ h6 {
 }
 
 .padding-li {
-  padding-left: 40px;
+  padding-left: 4vw;
 }
 
 /* Boton */
@@ -109,5 +114,27 @@ h6 {
 .boton-unete {
   display: block;
   margin: auto;
-  width: 400px;
+  width: 50%;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .unete-head h2 {
+    font-size: 5vw;
+  }
+
+  .unete-head {
+    font-size: 2.5vw;
+  }
+
+  .unete-precio h2 {
+    font-size: 5vw;
+  }
+
+  .edit-li > li > h2 {
+    font-size: 3vw;
+  }
+
+  .boton-unete {
+    width: 75%;
+  }
 }

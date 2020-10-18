@@ -1,20 +1,30 @@
-.barraSupe{
-    font-family: Visby CF;
-    background: #E2E2E2;
-    text-align: center;
-    padding: 7%;
+.barraSupe {
+  font-family: Visby CF;
+  background: #e2e2e2;
+  text-align: center;
+  padding: 7%;
 }
-.barraSupe > h1{
-    font-size: 50px;
-    color: #825274;
+.barraSupe > h1 {
+  font-size: 4vw;
+  color: #825274;
 }
 .barraSupe > h1 > span {
   font-weight: 700;
 }
 .barraSupe > h2 {
-  font-size: 2vw;
+  font-size: 1.7vw;
 }
-.barraSupe > h2{
-    font-size: 2vwx;
-    color: #825274;
+.barraSupe > h2 {
+  font-size: 2vwx;
+  color: #825274;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .barraSupe > h1 {
+    font-size: 5vw;
+  }
+
+  .barraSupe > h2 {
+    font-size: 2.5vw;
+  }
 }

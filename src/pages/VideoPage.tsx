@@ -139,16 +139,7 @@ export default function VideoPage() {
             </a>
           </div>
         </div>
-        <Comments
-          video={video}
-          videoId={videoId}
-          postDate={
-            videos?.find(
-              (pVideo: any) =>
-                pVideo.title === `Clase #${parseInt(videoId) + 1}`
-            )?.date
-          }
-        />
+        <Comments videoId={videoId} />
       </section>
       <Footer />
     </div>

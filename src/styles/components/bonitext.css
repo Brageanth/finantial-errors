@@ -9,7 +9,7 @@ h6 {
 }
 
 .icon-small {
-  height: 22px;
+  height: 2.2vw;
 }
 
 /* Caja Total Text */
@@ -29,14 +29,15 @@ h6 {
 }
 
 .head-text p {
-  line-height: 30px;
+  line-height: 3vw;
+  font-size: 2vw;
 }
 
 .head-text h2 {
   font-weight: 700;
-  font-size: 42px;
+  font-size: 4vw;
   padding: 20px 0;
-  text-shadow: 2px 2px 0 #d5b7ca;
+  text-shadow: 0.2vw 0.2vw 0 #d5b7ca;
 }
 
 /* Secciones de Texto */
@@ -44,7 +45,7 @@ h6 {
 .text-section {
   display: flex;
   justify-content: space-around;
-  padding-top: 60px;
+  padding-top: 6vw;
 }
 
 .section-boxs {
@@ -52,19 +53,54 @@ h6 {
 }
 
 .title-box {
-    display: flex;
-    align-items: flex-start;
-    padding-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 10px;
 }
 
 .title-box h2 {
   font-weight: 700;
+  font-size: 2vw;
 }
 
 .box {
   padding-bottom: 40px;
 }
 
+.box > p {
+  font-size: 2vw;
+}
+
 .box-2 p {
   padding-bottom: 18px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .text-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .title-box {
+    justify-content: center;
+    align-items: center;
+  }
+  .section-boxs {
+    width: 100%;
+  }
+  .head-text h2 {
+    font-size: 5vw;
+  }
+  .head-text p {
+    font-size: 3vw;
+  }
+  .title-box h2 {
+    font-size: 3vw;
+  }
+  .icon-small {
+    height: 2.5vw;
+    margin: 0 1vw;
+  }
+  .box > p {
+    font-size: 3vw;
+  }
 }

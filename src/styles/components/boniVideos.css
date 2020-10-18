@@ -11,7 +11,7 @@ h6 {
 .title-h2 {
   font-family: Visby CF;
   text-align: center;
-  font-size: 30px;
+  font-size: 4vw;
   margin: 0 12vw;
   color: #835274;
   padding-bottom: 40px;
@@ -31,5 +31,37 @@ h6 {
 .botton-unete-ahora {
   display: block;
   margin: 0 auto;
-  height: 200px;
+  height: 15vw;
+}
+
+.list-videos > div {
+  flex: 1;
+  padding: 3vw;
+}
+
+.iframe2 {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.iframe2 > iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .list-videos {
+    flex-direction: column;
+  }
+
+  .botton-unete-ahora {
+    height: 25vw;
+  }
 }

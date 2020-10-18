@@ -11,13 +11,14 @@ import BoniVideos from "../components/boniVideos";
 import Footer from "../components/footer";
 import moment from "moment";
 import CountdownPage from "./CountdownPage";
+import Comments from "../components/comments";
 
 export default function SellsPage() {
   const [all, setAll] = useState(false);
   const [ready, setReady] = useState(false);
 
   const showAll = () => {
-    if (moment().isSameOrAfter(moment("2020-10-14 18:30:00"))) {
+    if (moment().isSameOrAfter(moment("2020-10-14 20:30:00"))) {
       setAll(true);
       return true;
     }
@@ -44,7 +45,7 @@ export default function SellsPage() {
     <>
       <BannerProducto />
       <ProductVideo />
-      {!all && (
+      {all && (
         <>
           <GirlPart />
           <AvisoPeque />
@@ -55,6 +56,7 @@ export default function SellsPage() {
           <BoniVideos />
         </>
       )}
+      <Comments videoId={"5"} />
       <Footer />
     </>
   );

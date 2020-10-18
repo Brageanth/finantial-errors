@@ -70,7 +70,9 @@ export default function UneteVentas() {
             </h2>
           </li>
         </ul>
-        <img className="boton-unete" src="/img/Botones (2).png" alt="" />
+        <a href="https://api.whatsapp.com/send?phone=573213135626&text=Estoy%20list@%20para%20Los%20Ni%C3%B1os%20y%20el%20Dinero%20%C2%BFqu%C3%A9%20tengo%20que%20hacer">
+          <img className="boton-unete" src="/img/Botones (2).png" alt="" />
+        </a>
       </div>
     </>
   );

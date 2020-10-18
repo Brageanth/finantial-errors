@@ -32,11 +32,16 @@ export default function GirlPart() {
           </div>
           <h5>Inscripciones abiertas hasta el 17 de octubre</h5>
         </div>
-        <input
-          type="image"
-          className="botonUneteAhora"
-          src="https://finantial-errors-cdn.s3.amazonaws.com/img/ButtonUneteAhora.png"
-        />
+        <a
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=573213135626&text=Estoy%20list@%20para%20Los%20Ni%C3%B1os%20y%20el%20Dinero%20%C2%BFqu%C3%A9%20tengo%20que%20hacer"
+        >
+          <input
+            type="image"
+            className="botonUneteAhora"
+            src="https://finantial-errors-cdn.s3.amazonaws.com/img/ButtonUneteAhora.png"
+          />
+        </a>
       </div>
     </div>
   );
